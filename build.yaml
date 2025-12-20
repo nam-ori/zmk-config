@@ -5,3 +5,5 @@ include:
     shield: totem_right
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #
+  - board: seeeduino_xiao_ble
+    shield: hummingbird
