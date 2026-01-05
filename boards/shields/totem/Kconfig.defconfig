@@ -13,6 +13,9 @@ endif
 
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
 
+config CONFIG_ZMK_USB
+    default n
+
 config ZMK_BLE_EXPERIMENTAL_CONN
     default y
 
