@@ -152,7 +152,7 @@ label= "ADJ"                               ;
 
                 &sys_reset  &bt BT_CLR &out OUT_TOG &trans      &trans          &bt BT_CLR  &kp F9      &kp F10     &kp F11     &kp F12
                 &bootloader &bt BT_NXT &out OUT_BLE &trans      &trans         &out OUT_BLE &kp F5      &kp F6      &kp F7      &kp F8  
-    &trans      &BT_CLR_ALL &bt BT_PRV  &trans      &trans      &trans         &out OUT_TOG &kp F1      &kp F2      &kp F3      &kp F4      &trans         
+    &trans   &bt BT_CLR_ALL &bt BT_PRV  &trans      &trans      &trans         &out OUT_TOG &kp F1      &kp F2      &kp F3      &kp F4      &trans         
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
