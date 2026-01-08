@@ -130,7 +130,6 @@ ZMK_MACRO_ONE_PARAM(DOTS, bindings = <&morph_dots>, <&macro_param_1to1>, <&to MA
 // parameters to a hold-tap
 
 /* Ergo-L */
-ZMK_MACRO(E_CI_B, bindings = <&morph_e_grav>, <&to BEP>;) // Ê
 ZMK_MACRO(E_CI_E, bindings = <&morph_e_grav>, <&to ERG>;) // Ê
 
 
