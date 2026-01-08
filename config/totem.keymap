@@ -18,7 +18,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "../layouts/azerty_fr_modern.dtsi"
+#include "layouts/azerty_fr_modern.dtsi"
 
 // Keys
 #define ___ &trans
@@ -38,10 +38,10 @@
 #define NUM 4
 #define GAM 5
 
-#include "../behaviors/combos_totem.dtsi"
-#include "../behaviors/hold-tap.dtsi"
-#include "../behaviors/macros.dtsi"
-#include "../behaviors/mod-morph.dtsi"
+#include "behaviors/combos_totem.dtsi"
+#include "behaviors/hold-tap.dtsi"
+#include "behaviors/macros.dtsi"
+#include "behaviors/mod-morph.dtsi"
 
 
 ZMK_LAYER(ErgoL,
