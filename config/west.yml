@@ -4,10 +4,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-#    - name: urob
-#      url-base: https://github.com/urob
-#    - name: bildermankawasaki
-#      url-base: https://github.com/bildermankawasaki
+    - name: urob
+      url-base: https://github.com/urob
+    - name: bildermankawasaki
+      url-base: https://github.com/bildermankawasaki
 #    - name: joelspadin
 #      url-base: https://github.com/joelspadin
   projects:
@@ -15,13 +15,13 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-#    - name: zmk-keyboard-totem
-#      remote: bildermankawasaki
+    - name: zmk-keyboard-totem
+      remote: bildermankawasaki
 #    - name: zmk-locales
 #      remote: joelspadin
 #    - name: zmk-unicode
 #      remote: urob
-#    - name: zmk-helpers
-#      remote: urob
+    - name: zmk-helpers
+      remote: urob
   self:
     path: config

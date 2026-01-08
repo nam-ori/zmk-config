@@ -16,8 +16,7 @@ I will not use the Ergo-L OS layout even for systems with it available; it would
 
 ## Steps forward
 
-- getting a firmware working on a TOTEM keyboard, only in order to test the process and the keyboard itself (firmware generated, still waiting for my keyboard to test it!)
-- tidy the repo to empty any file from a repo without license information, add licence information on this one
+- [done] getting a firmware working on a TOTEM keyboard, only in order to test the process and the keyboard itself
 - Ergo-L main layers for "AZERTY AFNOR" layout (with joelspadin/zmk-locales repo, need for adaptation?)
 - Ergo-L main layers for "AZERTY alt." layout on default layer, moving the last one on a secondary layer
 - adjusting for best usage (behaviors, macros…)
