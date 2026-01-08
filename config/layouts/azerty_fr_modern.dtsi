@@ -98,14 +98,6 @@ ZMK_MOD_MORPH(morph_ae,     bindings = <&kp RALT(G)>, <&kp LSHFT(RALT(G))>; mods
 ZMK_MOD_MORPH(morph_oe,     bindings = <&kp GRAVE>, <&kp LSHFT(GRAVE)>; mods = <(MOD_LSFT|MOD_RSFT)>;) // œ / Œ
 ZMK_MOD_MORPH(morph_dots,   bindings = <&kp T_DOT>, <&kp T_DOT>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // … / …
 
-// Keypress then return to specified layer
-ZMK_MACRO_TWO_PARAM(KPT, bindings =
-    <&macro_param_1to1>,
-    <&kp MACRO_PLACEHOLDER>,
-    <&macro_param_2to1>,
-    <&to MACRO_PLACEHOLDER>;
-)
-
 // KEYMAP MACROS
 // The following macros return to the specified layer after being pressed
 ZMK_MACRO_ONE_PARAM(A_CI, bindings = <&morph_a_circ>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;) // Â
