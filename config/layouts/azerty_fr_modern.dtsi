@@ -65,8 +65,8 @@
 #define INV_EXCL RA(COMMA)  // ¡
 
 /* Fractions */
-#define MATH_1_4 RA(LS(NUSH)) // ¼
-#define MATH_1_2 LS(NUSH) // ½
+#define MATH_1_4 RA(LS(NUHS)) // ¼
+#define MATH_1_2 LS(NUHS) // ½
 // #define MATH_3_4 RC(N6)   // ¾
 
 
