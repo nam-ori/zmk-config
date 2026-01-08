@@ -46,12 +46,6 @@ ZMK_MOD_MORPH(comma_dot,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// hold: num layer | tap: escape | shift OR ctrl + tap : mouse click
-ZMK_MOD_MORPH(num_esc_clk,
-    bindings = <&lt NUM ESC>, <&mkp LCLK>;
-    mods = <(MOD_LSFT|MOD_LCTL)>;
-)
-
 // tap: period | shift + tap: colon
 ZMK_MOD_MORPH(dot_col,
     bindings = <&kp DOT>, <&kp COLON>;
