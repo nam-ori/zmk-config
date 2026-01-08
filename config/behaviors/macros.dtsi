@@ -1,0 +1,9 @@
+// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/macros.dtsi
+
+// Keypress then return to specified layer
+ZMK_MACRO_TWO_PARAM(KPT, bindings =
+    <&macro_param_1to1>,
+    <&kp MACRO_PLACEHOLDER>,
+    <&macro_param_2to1>,
+    <&to MACRO_PLACEHOLDER>;
+)
