@@ -12,66 +12,66 @@
 #define FR_Q   A            // Q
 #define FR_W   Z            // W
 #define FR_M   SEMI         // M
-#define FR_0   LSHFT(N0)    // 0
-#define FR_1   LSHFT(N1)    // 1
-#define FR_2   LSHFT(N2)    // 2
-#define FR_3   LSHFT(N3)    // 3
-#define FR_4   LSHFT(N4)    // 4
-#define FR_5   LSHFT(N5)    // 5
-#define FR_6   LSHFT(N6)    // 6
-#define FR_7   LSHFT(N7)    // 7
-#define FR_8   LSHFT(N8)    // 8
-#define FR_9   LSHFT(N9)    // 9
+#define FR_0   LS(N0)    // 0
+#define FR_1   LS(N1)    // 1
+#define FR_2   LS(N2)    // 2
+#define FR_3   LS(N3)    // 3
+#define FR_4   LS(N4)    // 4
+#define FR_5   LS(N5)    // 5
+#define FR_6   LS(N6)    // 6
+#define FR_7   LS(N7)    // 7
+#define FR_8   LS(N8)    // 8
+#define FR_9   LS(N9)    // 9
 #define SLSH   SQT          // /
 #define SAPOS  MINUS        // '
-#define DAPOS  LSHFT(MINUS) // "
-#define DEG    RALT(MINUS)  // °
-#define LBRAC  RALT(T)      // {
-#define RBRAC  RALT(Y)      // }
-#define LBKET  RALT(N5)     // [
-#define RBKET  RALT(N6)     // ]
-#define QUEST  LSHFT(M)     // ?
-#define PIP    RALT(L)      // |
-#define TILDS  RALT(N)      // ~
-#define LETHAN RALT(NUBS)   // ≤
-#define GRTHAN RALT(LSHFT(NUBS)) // ≥
-#define ACC_AI RALT(N2)     // ´
+#define DAPOS  LS(MINUS) // "
+#define DEG    RA(MINUS)  // °
+#define LBRAC  RA(T)      // {
+#define RBRAC  RA(Y)      // }
+#define LBKET  RA(N5)     // [
+#define RBKET  RA(N6)     // ]
+#define QUEST  LS(M)     // ?
+#define PIP    RA(L)      // |
+#define TILDS  RA(N)      // ~
+#define LETHAN RA(NUBS)   // ≤
+#define GRTHAN RA(LS(NUBS)) // ≥
+#define ACC_AI RA(N2)     // ´
 #define ACC_CI EQUAL        // ^
-#define ACC_GR RALT(N3)     // `
-#define ACC_TR LSHFT(EQUAL) // ¨
+#define ACC_GR RA(N3)     // `
+#define ACC_TR LS(EQUAL) // ¨
 #define LTH    NUBS         // <
-#define GTH    LSHFT(NUBS)  // >
-#define DOLL   RALT(D)      // $
-#define PERC   RALT(P)      // %
+#define GTH    LS(NUBS)  // >
+#define DOLL   RA(D)      // $
+#define PERC   RA(P)      // %
 #define AROB   GRAVE        // @
-#define ESPR   RALT(N4)     // &
+#define ESPR   RA(N4)     // &
 #define STR    NUHS         // *
-#define EURO   RALT(E)      // €
+#define EURO   RA(E)      // €
 #define LPAREN N5           // (
 #define RPAREN N6           // )
-#define BSLSH  RALT(N8)     // \
+#define BSLSH  RA(N8)     // \
 #define PLS    RBKT         // +
 #define MINS   LBKT         // -
-#define UNDSC  RALT(N8)     // _
-#define SHARP  LSHFT(GRAVE) // #
-#define EXCLM  LSHFT(COMMA) // !
+#define UNDSC  RA(N8)     // _
+#define SHARP  LS(GRAVE) // #
+#define EXCLM  LS(COMMA) // !
 #define SEMIC  SLASH        // ;
 #define CLN    DOT          // :
 #define PERD   M            // .
 #define COMM   COMMA        // ,
-#define NBSPC  RALT(SPACE)  // espace insécable
-#define T_DOT  LSHFT(DOT)   // …
+#define NBSPC  RA(SPACE)  // espace insécable
+#define T_DOT  LS(DOT)   // …
 
 /* Fractions */
-#define MATH_1_4 RALT(LSHFT(NUSH)) // ¼
-#define MATH_1_2 LSHFT(NUSH) // ½
+#define MATH_1_4 RA(LS(NUSH)) // ¼
+#define MATH_1_2 LS(NUSH) // ½
 // #define MATH_3_4 RC(N6)   // ¾
 
 
 /* Symbols */
-#define MATH_PM    LSHFT(RBKT)  // ±
-#define MATH_DEG   RALT(MINUS) // °
-#define MATH_MICRO LSHFT(NUHS)  // µ
+#define MATH_PM    LS(RBKT)  // ±
+#define MATH_DEG   RA(MINUS) // °
+#define MATH_MICRO LS(NUHS)  // µ
 
 /* Typography */
 #define LAQUO N9 // «
@@ -80,22 +80,22 @@
 // MOD-MORPH - lowercase / uppercase accented characters
 // NOTE: Only accents accessed with a dead key on french keyboard need to have this mod-morph
 // Otherwise the shift key will be pressed before the macro and will not be registering
-ZMK_MOD_MORPH(morph_a_circ, bindings = <&CIRC FR_A>, <&CIRC LSHFT(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
-ZMK_MOD_MORPH(morph_a_grav, bindings = <&AGRA FR_A>, <&AGRA LSHFT(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
-ZMK_MOD_MORPH(morph_e_aigu, bindings = <&AIGU E>, <&AIGU LSHFT(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
-ZMK_MOD_MORPH(morph_e_grav, bindings = <&AGRA E>, <&AGRA LSHFT(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
-ZMK_MOD_MORPH(morph_e_circ, bindings = <&CIRC E>, <&CIRC LSHFT(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
-ZMK_MOD_MORPH(morph_e_trem, bindings = <&TREM E>, <&TREM LSHFT(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
-ZMK_MOD_MORPH(morph_i_circ, bindings = <&CIRC I>, <&CIRC LSHFT(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
-ZMK_MOD_MORPH(morph_i_trem, bindings = <&TREM I>, <&TREM LSHFT(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
-ZMK_MOD_MORPH(morph_o_circ, bindings = <&CIRC O>, <&CIRC LSHFT(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
-ZMK_MOD_MORPH(morph_o_trem, bindings = <&TREM O>, <&TREM LSHFT(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
-ZMK_MOD_MORPH(morph_u_circ, bindings = <&CIRC U>, <&CIRC LSHFT(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
-ZMK_MOD_MORPH(morph_u_grav, bindings = <&AGRA U>, <&AGRA LSHFT(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
-ZMK_MOD_MORPH(morph_u_trem, bindings = <&TREM U>, <&TREM LSHFT(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
-ZMK_MOD_MORPH(morph_c_cedi, bindings = <&kp RALT(R)>, <&kp LSHFT(RALT(R))>; mods = <(MOD_LSFT|MOD_RSFT)>;) // ç / Ç
-ZMK_MOD_MORPH(morph_ae,     bindings = <&kp RALT(G)>, <&kp LSHFT(RALT(G))>; mods = <(MOD_LSFT|MOD_RSFT)>;) // æ / Æ
-ZMK_MOD_MORPH(morph_oe,     bindings = <&kp GRAVE>, <&kp LSHFT(GRAVE)>; mods = <(MOD_LSFT|MOD_RSFT)>;) // œ / Œ
+ZMK_MOD_MORPH(morph_a_circ, bindings = <&CIRC FR_A>, <&CIRC LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
+ZMK_MOD_MORPH(morph_a_grav, bindings = <&AGRA FR_A>, <&AGRA LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
+ZMK_MOD_MORPH(morph_e_aigu, bindings = <&AIGU E>, <&AIGU LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
+ZMK_MOD_MORPH(morph_e_grav, bindings = <&AGRA E>, <&AGRA LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
+ZMK_MOD_MORPH(morph_e_circ, bindings = <&CIRC E>, <&CIRC LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
+ZMK_MOD_MORPH(morph_e_trem, bindings = <&TREM E>, <&TREM LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
+ZMK_MOD_MORPH(morph_i_circ, bindings = <&CIRC I>, <&CIRC LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
+ZMK_MOD_MORPH(morph_i_trem, bindings = <&TREM I>, <&TREM LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
+ZMK_MOD_MORPH(morph_o_circ, bindings = <&CIRC O>, <&CIRC LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
+ZMK_MOD_MORPH(morph_o_trem, bindings = <&TREM O>, <&TREM LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
+ZMK_MOD_MORPH(morph_u_circ, bindings = <&CIRC U>, <&CIRC LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
+ZMK_MOD_MORPH(morph_u_grav, bindings = <&AGRA U>, <&AGRA LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
+ZMK_MOD_MORPH(morph_u_trem, bindings = <&TREM U>, <&TREM LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
+ZMK_MOD_MORPH(morph_c_cedi, bindings = <&kp RA(R)>, <&kp LS(RA(R))>; mods = <(MOD_LSFT|MOD_RSFT)>;) // ç / Ç
+ZMK_MOD_MORPH(morph_ae,     bindings = <&kp RA(G)>, <&kp LS(RA(G))>; mods = <(MOD_LSFT|MOD_RSFT)>;) // æ / Æ
+ZMK_MOD_MORPH(morph_oe,     bindings = <&kp GRAVE>, <&kp LS(GRAVE)>; mods = <(MOD_LSFT|MOD_RSFT)>;) // œ / Œ
 ZMK_MOD_MORPH(morph_dots,   bindings = <&kp T_DOT>, <&kp T_DOT>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // … / …
 
 // KEYMAP MACROS
