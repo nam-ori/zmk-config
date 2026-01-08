@@ -19,25 +19,25 @@
 ***********************/
 
 // CUT - Ctrl + X, active on base layer
-ZMK_COMBO(cut, &kp LC(X), LB3 LB4, QWE COL ERG)
+ZMK_COMBO(cut, &kp LC(X), LB3 LB4, ERG)
 
 // COPY - Ctrl + C, active on base layer
-ZMK_COMBO(copy, &kp LC(C), LB2 LB3, QWE COL ERG)
+ZMK_COMBO(copy, &kp LC(C), LB2 LB3, ERG)
 
 // PASTE - Ctrl + V, active on all layers
-ZMK_COMBO(paste, &kp LC(V), LB1 LB2, QWE COL ERG)
+ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ERG)
 
 // PRINT SCREEN - PrintScreen, active on base layer
-ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT3 RT4, QWE COL ERG)
+ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT3 RT4, ERG)
 
 // CAPS WORD - Both HR Shifts, active on base & accent layers
-ZMK_COMBO(capsword, &caps_word, LM1 RM1, QWE QAC COL CAC ERG EAC)
+ZMK_COMBO(capsword, &caps_word, LM1 RM1, ERG EAC)
 
 // CAPS LOCK - Both HR Controls, active on base & accent layers
-ZMK_COMBO(capslock, &kp CAPSLOCK, LM2 RM2, QWE QAC COL CAC ERG EAC)
+ZMK_COMBO(capslock, &kp CAPSLOCK, LM2 RM2, ERG EAC)
 
 // Toggle Game Layer - active on base and game layer
-ZMK_COMBO(toggle_game, &tog GAM, RT1 RT4, QWE GAM COL ERG)
+ZMK_COMBO(toggle_game, &tog GAM, RT1 RT4, GAM ERG)
 
 /***********************
   SYMBOL LAYER
