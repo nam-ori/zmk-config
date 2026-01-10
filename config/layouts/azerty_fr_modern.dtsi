@@ -96,36 +96,15 @@
 // MOD-MORPH - lowercase / uppercase accented characters
 // NOTE: Only accents accessed with a dead key on french keyboard need to have this mod-morph
 // Otherwise the shift key will be pressed before the macro and will not be registering
-ZMK_MOD_MORPH(morph_a_circ, bindings = <&CD_ACC_CI FR_A>, <&CD_ACC_CI LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
-ZMK_MOD_MORPH(morph_e_trem, bindings = <&CD_ACC_TR E>, <&CD_ACC_TR LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
-ZMK_MOD_MORPH(morph_i_circ, bindings = <&CD_ACC_CI I>, <&CD_ACC_CI LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
-ZMK_MOD_MORPH(morph_i_trem, bindings = <&CD_ACC_TR I>, <&CD_ACC_TR LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
-ZMK_MOD_MORPH(morph_o_circ, bindings = <&CD_ACC_CI O>, <&CD_ACC_CI LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
-ZMK_MOD_MORPH(morph_o_trem, bindings = <&CD_ACC_TR O>, <&CD_ACC_TR LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
-ZMK_MOD_MORPH(morph_u_circ, bindings = <&CD_ACC_CI U>, <&CD_ACC_CI LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
-ZMK_MOD_MORPH(morph_u_grav, bindings = <&CD_ACC_GR U>, <&CD_ACC_GR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
-ZMK_MOD_MORPH(morph_u_trem, bindings = <&CD_ACC_TR U>, <&CD_ACC_TR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
-
-// KEYMAP MACROS
-// The following macros return to the specified layer after being pressed
-// TBT = Then Back To
-ZMK_MACRO_ONE_PARAM(kp1, bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to ERG>;)
-ZMK_MACRO(A_CI, bindings = <&morph_a_circ>, <&to ERG>;)     // Â
-ZMK_MACRO(E_TR, bindings = <&morph_e_trem>, <&to ERG>;)     // Ë
-ZMK_MACRO(I_CI, bindings = <&morph_i_circ>, <&to ERG>;)     // Î
-ZMK_MACRO(I_TR, bindings = <&morph_i_trem>, <&to ERG>;)     // Ï
-ZMK_MACRO(O_CI, bindings = <&morph_o_circ>, <&to ERG>;)     // Ô
-ZMK_MACRO(O_TR, bindings = <&morph_o_trem>, <&to ERG>;)     // Ö
-ZMK_MACRO(U_CI, bindings = <&morph_u_circ>, <&to ERG>;)     // Û
-ZMK_MACRO(U_GR, bindings = <&morph_u_grav>, <&to ERG>;)     // Ù
-ZMK_MACRO(U_TR, bindings = <&morph_u_trem>, <&to ERG>;)     // Ü
-
-// ACCENTS HOME ROW MODS
-// NOTE: Accents on the home row are needed as it seems impossible to pass 
-// parameters to a hold-tap
-
-/* Ergo-L */
-ZMK_MACRO(E_CI_E, bindings = <&morph_e_grav>, <&to ERG>;) // Ê
+ZMK_MOD_MORPH(morph_a_circ, bindings = <&kp CD_ACC_CI FR_A>, <&kp CD_ACC_CI LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
+ZMK_MOD_MORPH(morph_e_trem, bindings = <&kp CD_ACC_TR E>, <&kp CD_ACC_TR LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
+ZMK_MOD_MORPH(morph_i_circ, bindings = <&kp CD_ACC_CI I>, <&kp CD_ACC_CI LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
+ZMK_MOD_MORPH(morph_i_trem, bindings = <&kp CD_ACC_TR I>, <&kp CD_ACC_TR LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
+ZMK_MOD_MORPH(morph_o_circ, bindings = <&kp CD_ACC_CI O>, <&kp CD_ACC_CI LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
+ZMK_MOD_MORPH(morph_o_trem, bindings = <&kp CD_ACC_TR O>, <&kp CD_ACC_TR LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
+ZMK_MOD_MORPH(morph_u_circ, bindings = <&kp CD_ACC_CI U>, <&kp CD_ACC_CI LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
+ZMK_MOD_MORPH(morph_u_grav, bindings = <&kp CD_ACC_GR U>, <&kp CD_ACC_GR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
+ZMK_MOD_MORPH(morph_u_trem, bindings = <&kp CD_ACC_TR U>, <&kp CD_ACC_TR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
 
 // ACCENTS MACROS
 
