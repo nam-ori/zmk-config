@@ -103,6 +103,6 @@ ZMK_MOD_MORPH(comma_semi,
 
 // tap: trema | shift + tap: grave -- in ErgoAcc, back to ErgoL
 ZMK_MOD_MORPH(trem_gr,
-    bindings = <&kp1 ACC_TR>, <&kp1 ACC_GR>;
+    bindings = <&kp1 CD_ACC_TR>, <&kp1 CD_ACC_GR>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
