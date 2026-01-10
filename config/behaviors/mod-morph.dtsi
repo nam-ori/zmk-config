@@ -19,7 +19,7 @@ ZMK_MOD_MORPH(slsh_bslsh,
 
 // tap: dash | shift + tap: tilde
 ZMK_MOD_MORPH(dash_tilde,
-    bindings = <&kp MINUS>, <&kp TILDS>;
+    bindings = <&kp MINUS>, <&kp CD_TILDS>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
