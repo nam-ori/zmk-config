@@ -39,7 +39,7 @@ ZMK_MOD_MORPH(dot_col,
 
 // tap: single apostrophe | shift + tap: double apostrophe
 ZMK_MOD_MORPH(sap_dap,
-    bindings = <&kp SAPOS>, <&kp DAPOS>;
+    bindings = <&kp SQUO>, <&kp DQUO>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
