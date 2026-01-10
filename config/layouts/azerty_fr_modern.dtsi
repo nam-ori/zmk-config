@@ -107,14 +107,14 @@ ZMK_MOD_MORPH(morph_u_grav, bindings = <&kp CD_ACC_GR &kp U>, <&kp CD_ACC_GR &kp
 ZMK_MOD_MORPH(morph_u_trem, bindings = <&kp CD_ACC_TR &kp U>, <&kp CD_ACC_TR &kp LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
 
 // ACCENTS MACROS
-
-/* Accents without letter */
+/*
+// Accents without letter
 ZMX_MACRO_ONE_PARAM(cd_to_acc, bindings =
     <&macro_param_1to1>,
     <&kp MACRO_PLACEHOLDER>,
     <&kp SPACE>;
 )
-
+*/
 /*
 #define TILDS   &cd_to_acc CD_TILDS   // *
 #define ACC_CU  &cd_to_acc CD_ACC_CU  // *
