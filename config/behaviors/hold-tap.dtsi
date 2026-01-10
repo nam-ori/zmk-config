@@ -29,10 +29,19 @@ ZMK_HOLD_TAP(hmr,
 )
 
 // homerow mods for ê (Ergo-L)
-ZMK_HOLD_TAP(hrmec,
+ZMK_HOLD_TAP(hrm_ECIRC,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&E_CI_E>;
+)
+
+// homerow mods for ê (Ergo-L)
+ZMK_HOLD_TAP(hrm_BACK,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&to ERG>;
 )

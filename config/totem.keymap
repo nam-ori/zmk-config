@@ -24,10 +24,6 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                          // thumbs
 
-// Keys
-#define ___ &trans
-#define XXX &none
-
 // Modifier keys
 #define GL LGUI
 #define CL LCTRL
@@ -47,21 +43,47 @@
 #define NUM 4
 #define GAM 5
 
+// Keys
+#define ___ &trans
+#define XXX &none
+#define BACK &to ERG
+
 #include "layouts/azerty_fr_modern.dtsi"
 
 #include "behaviors/combos_totem.dtsi"
 #include "behaviors/hold-tap.dtsi"
-#include "behaviors/macros.dtsi"
 #include "behaviors/mod-morph.dtsi"
+#include "behaviors/macros.dtsi"
+
+// KEYMAP MACROS
+// The following macros return to the specified layer after being pressed
+// kp1 = key press once (1) only then back
+ZMK_MACRO_ONE_PARAM(kp1, bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to ERG>;)
+ZMK_MACRO(A_CI1, bindings = <&morph_a_circ>, <&to ERG>;)     // Â
+ZMK_MACRO(E_TR1, bindings = <&morph_e_trem>, <&to ERG>;)     // Ë
+ZMK_MACRO(I_CI1, bindings = <&morph_i_circ>, <&to ERG>;)     // Î
+ZMK_MACRO(I_TR1, bindings = <&morph_i_trem>, <&to ERG>;)     // Ï
+ZMK_MACRO(O_CI1, bindings = <&morph_o_circ>, <&to ERG>;)     // Ô
+ZMK_MACRO(O_TR1, bindings = <&morph_o_trem>, <&to ERG>;)     // Ö
+ZMK_MACRO(U_CI1, bindings = <&morph_u_circ>, <&to ERG>;)     // Û
+ZMK_MACRO(U_GR1, bindings = <&morph_u_grav>, <&to ERG>;)     // Ù
+ZMK_MACRO(U_TR1, bindings = <&morph_u_trem>, <&to ERG>;)     // Ü
+
+// ACCENTS HOME ROW MODS
+// NOTE: Accents on the home row are needed as it seems impossible to pass 
+// parameters to a hold-tap
+
+/* Ergo-L */
+ZMK_MACRO(E_CI_E, bindings = <&morph_e_grav>, <&to ERG>;) // Ê
 
 
 ZMK_LAYER(ErgoL,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp M         &kp D         &to EAC      &kp F
+                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp M         &kp D         &to EAC      &kp Y
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-               &hml GL FR_A  &hml AL S   &hml CL E   &hml SL N    &comma_semi    &kp L       &hmr SR R     &hmr CL T     &hmr AR I    &hmr GL U
+               &hml GL FR_A  &hml AL S   &hml CL E   &hml SL N    &kp F          &kp L       &hmr SR R     &hmr CL T     &hmr AR I    &hmr GL U
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     XXX         &kp FR_Z    &kp X       &sap_dap    &kp V        &kp B          &dot_col    &kp H         &kp G         &kp Y        &kp K        XXX
+     XXX         &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        XXX
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          XXX        &lt NAV RET  &lt NUM ESC     &bspc_del  &lt SYM SPACE  &mt RALT TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
@@ -69,13 +91,13 @@ ZMK_LAYER(ErgoL,
 
 ZMK_LAYER(ErgoAcc,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &AE_L ERG   &CEDIL ERG  &OE_L ERG   &O_CI ERG    XXX            XXX         XXX           XXX           &trem_gr     XXX
+                 &A_CI1     &kp1 C_CEDIL &kp1 FR_OE  &O_CI        BACK           BACK      &kp1 MATH_MICRO &kp1 UNDSC    &trem_gr     BACK   
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &A_GR ERG   &E_CU ERG   &E_GR ERG  &hrmec SL ERG XXX            XXX         &kp SL        &I_TR ERG     &U_CI ERG    &U_GR ERG
+             &kp1 A_AGRAV &kp1 E_ACUTE &kp1 E_AGRAV &hrm_ECIRC SL 0 BACK           BACK      &hrm_BACK SL 0  &I_T1         &U_CI1       &U_GR    
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &A_CI ERG   XXX         XXX         XXX          XXX            XXX         XXX           XXX           XXX          XXX          ___
+     ___         &A_CI1      BACK        BACK       BACK          BACK           BACK        BACK          BACK          BACK         BACK         ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          &to ERG        ___         ___           ___
+                                         ___         ___          BACK           ___         ___           ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
