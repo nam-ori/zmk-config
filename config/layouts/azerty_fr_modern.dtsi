@@ -115,8 +115,10 @@ ZMX_MACRO_ONE_PARAM(cd_to_acc, bindings =
     <&kp SPACE>;
 )
 
+/*
 #define TILDS   &cd_to_acc CD_TILDS   // *
 #define ACC_CU  &cd_to_acc CD_ACC_CU  // *
 #define ACC_CI  &cd_to_acc CD_ACC_CI  // *
 #define ACC_GR  &cd_to_acc CD_ACC_GR  // *
 #define ACC_TR  &cd_to_acc CD_ACC_TR  // *
+*/
