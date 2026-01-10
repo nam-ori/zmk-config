@@ -96,15 +96,15 @@
 // MOD-MORPH - lowercase / uppercase accented characters
 // NOTE: Only accents accessed with a dead key on french keyboard need to have this mod-morph
 // Otherwise the shift key will be pressed before the macro and will not be registering
-ZMK_MOD_MORPH(morph_a_circ, bindings = <&kp CD_ACC_CI FR_A>, <&kp CD_ACC_CI LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
-ZMK_MOD_MORPH(morph_e_trem, bindings = <&kp CD_ACC_TR E>, <&kp CD_ACC_TR LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
-ZMK_MOD_MORPH(morph_i_circ, bindings = <&kp CD_ACC_CI I>, <&kp CD_ACC_CI LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
-ZMK_MOD_MORPH(morph_i_trem, bindings = <&kp CD_ACC_TR I>, <&kp CD_ACC_TR LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
-ZMK_MOD_MORPH(morph_o_circ, bindings = <&kp CD_ACC_CI O>, <&kp CD_ACC_CI LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
-ZMK_MOD_MORPH(morph_o_trem, bindings = <&kp CD_ACC_TR O>, <&kp CD_ACC_TR LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
-ZMK_MOD_MORPH(morph_u_circ, bindings = <&kp CD_ACC_CI U>, <&kp CD_ACC_CI LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
-ZMK_MOD_MORPH(morph_u_grav, bindings = <&kp CD_ACC_GR U>, <&kp CD_ACC_GR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
-ZMK_MOD_MORPH(morph_u_trem, bindings = <&kp CD_ACC_TR U>, <&kp CD_ACC_TR LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
+ZMK_MOD_MORPH(morph_a_circ, bindings = <&kp CD_ACC_CI &kp FR_A>, <&kp CD_ACC_CI &kp LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
+ZMK_MOD_MORPH(morph_e_trem, bindings = <&kp CD_ACC_TR &kp E>, <&kp CD_ACC_TR &kp LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
+ZMK_MOD_MORPH(morph_i_circ, bindings = <&kp CD_ACC_CI &kp I>, <&kp CD_ACC_CI &kp LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
+ZMK_MOD_MORPH(morph_i_trem, bindings = <&kp CD_ACC_TR &kp I>, <&kp CD_ACC_TR &kp LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
+ZMK_MOD_MORPH(morph_o_circ, bindings = <&kp CD_ACC_CI &kp O>, <&kp CD_ACC_CI &kp LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
+ZMK_MOD_MORPH(morph_o_trem, bindings = <&kp CD_ACC_TR &kp O>, <&kp CD_ACC_TR &kp LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
+ZMK_MOD_MORPH(morph_u_circ, bindings = <&kp CD_ACC_CI &kp U>, <&kp CD_ACC_CI &kp LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
+ZMK_MOD_MORPH(morph_u_grav, bindings = <&kp CD_ACC_GR &kp U>, <&kp CD_ACC_GR &kp LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ù / Ù
+ZMK_MOD_MORPH(morph_u_trem, bindings = <&kp CD_ACC_TR &kp U>, <&kp CD_ACC_TR &kp LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
 
 // ACCENTS MACROS
 
