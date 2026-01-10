@@ -111,7 +111,7 @@ ZMK_MOD_MORPH(morph_u_trem, bindings = <&kp CD_ACC_TR U>, <&kp CD_ACC_TR LS(U)>;
 /* Accents without letter */
 ZMX_MACRO_ONE_PARAM(cd_to_acc, bindings =
     <&macro_param_1to1>,
-    <&macro_tap &kp MACRO_PLACEHOLDER &kp SPACE>;
+    <&macro_tap &kp MACRO_PLACEHOLDER SPACE>;
 )
 
 #define TILDS   <&cd_to_acc CD_TILDS>   // *
