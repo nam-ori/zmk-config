@@ -13,3 +13,6 @@ ZMK_COMBO(tab, &kp TAB, RH0 RH1, ERG)
 
 // NAV Toggle - Left thumbs, active on all alpha layers & NAV
 ZMK_COMBO(nav_toggle, &tog NAV, LH0 LH1, ERG NAV)
+
+// ALT+SHIFT - Inner right thumbs, active on all alpha layers
+ZMK_COMBO(altshift, &kp LA(LSHFT), LB5 LB4, ERG)

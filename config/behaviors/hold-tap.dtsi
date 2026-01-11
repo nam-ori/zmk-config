@@ -28,6 +28,13 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
 )
 
+// ACCENTS HOME ROW MODS
+// NOTE: Accents on the home row are needed as it seems impossible to pass 
+// parameters to a hold-tap
+
+/* Ergo-L */
+ZMK_MACRO(E_CI_E, bindings = <&e_circ>, <&to ERG>;) // Ê
+
 // homerow mods for ê (Ergo-L)
 ZMK_HOLD_TAP(hrm_ECIRC,
     flavor = "balanced";
@@ -35,13 +42,4 @@ ZMK_HOLD_TAP(hrm_ECIRC,
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&E_CI_E>;
-)
-
-// homerow mods for ê (Ergo-L)
-ZMK_HOLD_TAP(hrm_BACK,
-    flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&to ERG>;
 )

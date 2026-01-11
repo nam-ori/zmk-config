@@ -50,50 +50,47 @@
 
 #include "layouts/azerty_fr_modern.dtsi"
 
-#include "behaviors/combos_totem.dtsi"
-#include "behaviors/hold-tap.dtsi"
-#include "behaviors/mod-morph.dtsi"
 #include "behaviors/macros.dtsi"
+#include "behaviors/mod-morph.dtsi"
+#include "behaviors/hold-tap.dtsi"
+#include "behaviors/combos_totem.dtsi"
 
 // KEYMAP MACROS
 // The following macros return to the specified layer after being pressed
 // kp1 = key press once (1) only then back
 ZMK_MACRO_ONE_PARAM(kp1, bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to ERG>;)
-ZMK_MACRO(A_CI1, bindings = <&morph_a_circ>, <&to ERG>;)     // Â
-ZMK_MACRO(E_TR1, bindings = <&morph_e_trem>, <&to ERG>;)     // Ë
-ZMK_MACRO(I_CI1, bindings = <&morph_i_circ>, <&to ERG>;)     // Î
-ZMK_MACRO(I_TR1, bindings = <&morph_i_trem>, <&to ERG>;)     // Ï
-ZMK_MACRO(O_CI1, bindings = <&morph_o_circ>, <&to ERG>;)     // Ô
-ZMK_MACRO(O_TR1, bindings = <&morph_o_trem>, <&to ERG>;)     // Ö
-ZMK_MACRO(U_CI1, bindings = <&morph_u_circ>, <&to ERG>;)     // Û
-ZMK_MACRO(U_GR1, bindings = <&morph_u_grav>, <&to ERG>;)     // Ù
-ZMK_MACRO(U_TR1, bindings = <&morph_u_trem>, <&to ERG>;)     // Ü
+ZMK_MACRO(A_CI1, bindings = <&a_circ>, <&to ERG>;)     // Â
+ZMK_MACRO(E_TR1, bindings = <&e_trem>, <&to ERG>;)     // Ë
+ZMK_MACRO(I_CI1, bindings = <&i_circ>, <&to ERG>;)     // Î
+ZMK_MACRO(I_TR1, bindings = <&i_trem>, <&to ERG>;)     // Ï
+ZMK_MACRO(O_CI1, bindings = <&o_circ>, <&to ERG>;)     // Ô
+ZMK_MACRO(O_TR1, bindings = <&o_trem>, <&to ERG>;)     // Ö
+ZMK_MACRO(U_CI1, bindings = <&u_circ>, <&to ERG>;)     // Û
+ZMK_MACRO(U_TR1, bindings = <&u_trem>, <&to ERG>;)     // Ü
 
-// ACCENTS HOME ROW MODS
-// NOTE: Accents on the home row are needed as it seems impossible to pass 
-// parameters to a hold-tap
-
-/* Ergo-L */
-ZMK_MACRO(E_CI_E, bindings = <&morph_e_grav>, <&to ERG>;) // Ê
+ZMK_MACRO(E_CU1, bindings = <&e_cute>, <&to ERG>;)     // É
+ZMK_MACRO(E_GR1, bindings = <&e_grav>, <&to ERG>;)     // È
+ZMK_MACRO(E_CI1, bindings = <&e_circ>, <&to ERG>;)     // Ê
+ZMK_MACRO(A_GR1, bindings = <&a_grav>, <&to ERG>;)     // À
 
 
 ZMK_LAYER(ErgoL,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp M         &kp D         &to EAC      &kp Y
+                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp M         &kp D         &eac_exl     &kp Y
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
                &hml GL FR_A  &hml AL S   &hml CL E   &hml SL N    &kp F          &kp L       &hmr SR R     &hmr CL T     &hmr AR I    &hmr GL U
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     XXX         &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        XXX
+     &kp LCTRL   &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        &kp LALT
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         XXX        &lt NAV RET  &lt NUM ESC     &bspc_del  &lt SYM SPACE  &mt RALT TAB
+                                         &kp LSHFT   &lt NAV RET  &lt NUM ESC    &bspc_del   &lt SYM SPACE &mt RALT TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(ErgoAcc,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &A_CI1     &kp1 C_CEDIL &kp1 FR_OE  &O_CI        BACK           BACK      &kp1 MATH_MICRO &kp1 UNDSC    &trem_gr     BACK   
+                 &A_CI1     &kp1 C_CEDIL &kp1 FR_OE  &O_CI1       BACK           BACK      &kp1 MATH_MICRO &kp1 UNDSC    &trem_gr1    BACK
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-             &kp1 A_AGRAV &kp1 E_ACUTE &kp1 E_AGRAV &hrm_ECIRC SL 0 BACK           BACK      &hrm_BACK SL 0  &I_T1         &U_CI1       &U_GR    
+                 &A_GR1      &E_CU1      &E_GR1   &hrm_ECIRC SL 0 BACK           BACK        &kp SL        &I_TR1        &U_CI1       &kp1 U_AGRAV
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &A_CI1      BACK        BACK       BACK          BACK           BACK        BACK          BACK          BACK         BACK         ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
@@ -103,13 +100,13 @@ ZMK_LAYER(ErgoAcc,
 
 ZMK_LAYER(Symbols,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp HASH    &kp AT      &kp LBRAC   &kp RBRAC    &kp PLUS       XXX         &kp TILDS     &GRA          &kp DLLR     XXX
+                 &circacc    &lessert    &greatert   &dollars     &perct         &arobase    &kp ESPR      &starmul      &squotecute  &graveacc
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                &slsh_bslsh &dash_tilde  &kp LPAR   &hml SL RPAR  &kp EQUAL      &CAR        &kp QUEST     &kp EXCL      &kp AMPS     &kp PIP
+                &lbracecaron &kp LPAREN  &kp RPAREN  &rbraceupoin &equalordif    &bslashobl  &plusplusm    &hyphenminm   &slashdiv    &dquotecute
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp STAR    &kp PRCNT   &kp LBKET   &kp RBKET    &kp UNDER      XXX         &kp LETHAN    &kp GRTHAN    &kp LAQUO    &kp RAQUO    ___
+     ___         &tildes     &lbracketc  &rbracketo  &underscruh  &kp SHARP      &kp VPIP    &kp EXCLM     &semicolced   &coloneach   &questionm   ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___            ___         ___           ___
+                                         ___         ___          &lt NUM ESC    ___         ___           ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
@@ -127,13 +124,13 @@ ZMK_LAYER(Nav,
 
 ZMK_LAYER(Numbers,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp F1      &kp F2      &kp F3      &kp F4       &kp MATH_PM   &kp MATH_1_4 &kp N7        &kp N8        &kp N9       &multi_div
+                 &kp F1      &kp F2      &kp F3      &kp F4       &kp MATH_PM   &kp MATH_1_4 &d7           &d8           &d9          &multi_div
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &kp F5      &kp F6      &kp F7      &hml SL F8   &kp DEG       &kp MATH_1_2 &kp N4        &kp N5        &kp N6       &plus_minus
+                 &kp F5      &kp F6      &kp F7      &hml SL F8   &kp DEG       &kp MATH_1_2 &d4           &d5           &d6          &plus_minus
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp F9      &kp F10     &kp F11     &kp F12    &kp MATH_MICRO  XXX          &kp N1        &kp N2        &kp N3       &comma_dot   ___
+     ___         &kp F9      &kp F10     &kp F11     &kp F12    &kp MATH_MICRO  XXX          &d1           &d2           &d3          &comma_dot   ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___            ___         &kp N0        &kp DOT
+                                         ___         ___          ___            ___         &d0           &kp DOT
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 

@@ -7,3 +7,21 @@ ZMK_MACRO_TWO_PARAM(KPT, bindings =
     <&macro_param_2to1>,
     <&to MACRO_PLACEHOLDER>;
 )
+
+// ACCENTS MACROS
+// Accents without letter (dead char -> "alive" char)
+ZMK_MACRO_ONE_PARAM(alive, bindings =
+    <&macro_param_1to1>,
+    <&kp MACRO_PLACEHOLDER>,
+    <&kp SPACE>;
+)
+
+// UPPER POSITION LETTERS - POWER NUMBER etc.
+ZMK_MACRO_ONE_PARAM(pwr, 
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings =
+        <&kp CD_ACC_CI>,
+        <&macro_param_1to1>,
+        <&kp MACRO_PLACEHOLDER>;
+)
