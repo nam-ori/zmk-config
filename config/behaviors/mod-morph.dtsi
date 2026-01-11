@@ -37,7 +37,7 @@ ZMK_MOD_MORPH(min_qst,
 
 // tap: period | shift + tap: colon
 ZMK_MOD_MORPH(dot_col,
-    bindings = <&kp DOT>, <&kp COLON>;
+    bindings = <&kp PERD>, <&kp CLN>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -133,7 +133,7 @@ ZMK_MOD_MORPH(bslashobl,
 
 // Alt+KeyJ - tap: plus | shift + tap: plus/minus
 ZMK_MOD_MORPH(plusplusm,
-    bindings = <&kp MATH_PM>, <&kp MATH_PM>;
+    bindings = <&kp RBKT>, <&kp MATH_PM>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -200,78 +200,78 @@ ZMK_MOD_MORPH(questionm,
 
 // Digit1 - tap: 1 | shift + tap: euro
 ZMK_MOD_MORPH(d1,
-    bindings = <&kp N1>, <&kp EURO>;
+    bindings = <&kp FR_1>, <&kp EURO>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit2 - tap: 2 | shift + tap: left french (dble) quotes
 ZMK_MOD_MORPH(d2,
-    bindings = <&kp N2>, <&kp LFQUO>;
+    bindings = <&kp FR_2>, <&kp LFQUO>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit3 - tap: 3 | shift + tap: right french (dble) quotes
 ZMK_MOD_MORPH(d3,
-    bindings = <&kp N3>, <&kp RFQUO>;
+    bindings = <&kp FR_3>, <&kp RFQUO>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit4 - tap: 4 | shift + tap: dollar
 ZMK_MOD_MORPH(d4,
-    bindings = <&kp N4>, <&kp DOLLAR>;
+    bindings = <&kp FR_4>, <&kp DOLL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit5 - tap: 5 | shift + tap: percent
 ZMK_MOD_MORPH(d5,
-    bindings = <&kp N5>, <&kp PERC>;
+    bindings = <&kp FR_5>, <&kp PERC>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit6 - tap: 6 | shift + tap: power
 ZMK_MOD_MORPH(d6,
-    bindings = <&kp N6>, <&alive CD_ACC_CI>;
+    bindings = <&kp FR_6>, <&alive CD_ACC_CI>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit7 - tap: 7 | shift + tap: esperluette
 ZMK_MOD_MORPH(d7,
-    bindings = <&kp N7>, <&kp ESPR>;
+    bindings = <&kp FR_7>, <&kp ESPR>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit8 - tap: 8 | shift + tap: star
 ZMK_MOD_MORPH(d8,
-    bindings = <&kp N8>, <&kp STR>;
+    bindings = <&kp FR_8>, <&kp STR>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit9 - tap: 9 | shift + tap: sharp
 ZMK_MOD_MORPH(d9,
-    bindings = <&kp N9>, <&kp SHARP>;
+    bindings = <&kp FR_9>, <&kp SHARP>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // Digit0 - tap: 0 | shift + tap: arobase
 ZMK_MOD_MORPH(d0,
-    bindings = <&kp N0>, <&kp AROB>;
+    bindings = <&kp FR_0>, <&kp AROB>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // tap: plus | shift + tap: minus
 ZMK_MOD_MORPH(plus_minus,
-    bindings = <&kp PLUS>, <&kp MINUS>;
+    bindings = <&kp RBKT>, <&kp HYPMIN>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // tap: multiply | shift + tap: divide
 ZMK_MOD_MORPH(multi_div,
-    bindings = <&kp STAR>, <&kp KP_SLASH>;
+    bindings = <&kp STAR>, <&kp SLSH>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// tap: comma | shift + tap: period
+// tap: comma | shift + tap: dot (period)
 ZMK_MOD_MORPH(comma_dot,
-    bindings = <&kp COMMA>, <&kp DOT>;
+    bindings = <&kp COMM>, <&kp PERD>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )

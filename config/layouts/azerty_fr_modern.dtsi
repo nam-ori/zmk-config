@@ -54,7 +54,7 @@
 #define STR     NUHS        // *
 #define EURO    RA(E)       // €
 #define BSLSH   RA(N8)      // \
-#define PLS     RBKT        // +
+#define FPLUS   RBKT        // +
 #define HYPMIN  LBKT        // -
 #define UNB_HYP LS(LA(LBKT))    // ‑ (unbreakable)
 #define NDASH   LS(LBKT)    // –   
