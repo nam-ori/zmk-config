@@ -101,7 +101,7 @@ ZMK_MOD_MORPH(squotecute, bindings = <&kp SQUO>, <&kp CD_ACC_CU>; mods = <(MOD_L
 ZMK_MOD_MORPH(graveacc, bindings = <&alive CD_ACC_GR>, <&kp CD_ACC_GR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyA - tap: left brace | shift + tap: caron
-ZMK_MOD_MORPH(lbracecaron, bindings = <&kp LBRAC>, <&kp CD_CAR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(lbracecar, bindings = <&kp LBRAC>, <&kp CD_CAR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyF - tap: right brace | shift + tap: upper point
 ZMK_MOD_MORPH(rbraceupoin, bindings = <&kp RBRAC>, <&kp CD_UPO>; mods = <(MOD_LSFT|MOD_RSFT)>;)

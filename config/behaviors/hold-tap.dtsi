@@ -70,3 +70,34 @@ ZMK_HOLD_TAP(narrowsp_lt,
     global-quick-tap;
     bindings = <&mo>, <&nnbspac>;
 )
+
+// space or no-break space
+ZMK_HOLD_TAP(hmlrbrace,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&rbraceupoin>;
+)
+
+// space or no-break space
+ZMK_HOLD_TAP(hmrplus,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&plusplusm>;
+)
+
+// space or no-break space
+ZMK_HOLD_TAP(hmrhyphen,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&hyphenminm>;
+)
+
+
+
+

@@ -112,7 +112,7 @@ ZMK_LAYER(Symbols,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &circacc    &lessert    &greatert   &dollars     &perct         &arobase    &kp ESPR      &starmul      &squotecute  &graveacc
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-             lbracecaron &hml AL LPAREN &hml CL RPAREN &hmlrbrace &equalordif    &bslashobl  &hmrplus      &hmrhyphen    &slashdiv    &dquotecute
+               &lbracecar &hml AL LPAREN &hml CL RPAREN &hmlrbrace &equalordif    &bslashobl  &hmrplus      &hmrhyphen    &slashdiv    &dquotecute
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &tildes     &lbracketc  &rbracketo  &underscruh  &kp SHARP      &kp VPIP    &kp EXCLM     &semicolced   &coloneach   &questionm   ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
