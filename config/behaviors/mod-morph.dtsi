@@ -50,7 +50,7 @@ ZMK_MOD_MORPH(AGR_E, bindings = <&kp1 A_AGRAV ERG>, <&kp1 LS(RA(A_AGRAV)) ERG>; 
 ////////////////////////
 
 // tap: to EAC | shift + tap: exclamation mark
-ZMK_MOD_MORPH(eac_exl, bindings = <&onechar EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(eac_exl, bindings = <&onecharac EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: minus | shift + tap: question mark
 ZMK_MOD_MORPH(min_qst, bindings = <&kp HYPMIN>, <&kp QUEST>; mods = <(MOD_LSFT|MOD_RSFT)>;)
