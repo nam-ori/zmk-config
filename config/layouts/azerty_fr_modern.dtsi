@@ -25,6 +25,7 @@
 #define FR_8    LS(N8)      // 8
 #define FR_9    LS(N9)      // 9
 #define SLSH    SQT         // /
+#define BSLSH   LS(SQT)     // 
 #define SQUO    MINUS       // '
 #define DQUO    LS(MINUS)   // "
 #define APO     N8          // ’
@@ -53,7 +54,6 @@
 #define ESPR    RA(N4)      // &
 #define STR     NUHS        // *
 #define EURO    RA(E)       // €
-#define BSLSH   RA(N8)      // \
 #define FPLUS   RBKT        // +
 #define HYPMIN  LBKT        // -
 #define UNB_HYP LS(LA(LBKT))    // ‑ (unbreakable)
