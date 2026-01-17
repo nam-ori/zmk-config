@@ -180,8 +180,10 @@ ZMK_MOD_MORPH(d0, bindings = <&kp FR_0>, <&kp AROB>; mods = <(MOD_LSFT|MOD_RSFT)
 ZMK_MOD_MORPH(plus_minus, bindings = <&kp RBKT>, <&kp HYPMIN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: multiply | shift + tap: divide
-ZMK_MOD_MORPH(multi_div, bindings = <&kp STAR>, <&kp SLSH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(multi_div, bindings = <&kp STR>, <&kp SLSH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: comma | shift + tap: dot (period)
 ZMK_MOD_MORPH(comma_dot, bindings = <&kp COMM>, <&kp PERD>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
+// tap: equal | shift + tap: slash (difference symbols)
+ZMK_MOD_MORPH(equal_obl, bindings = <&kp EQUA>, <&kp CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)

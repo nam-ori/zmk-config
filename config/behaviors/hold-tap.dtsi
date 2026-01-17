@@ -59,7 +59,7 @@ ZMK_HOLD_TAP(space_lt,
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
-    bindings = <&kp>, <&nbspac>;
+    bindings = <&mo>, <&nbspac>;
 )
 
 // space or no-break space
@@ -68,5 +68,5 @@ ZMK_HOLD_TAP(narrowsp_lt,
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
-    bindings = <&kp>, <&nnbspac>;
+    bindings = <&mo>, <&nnbspac>;
 )
