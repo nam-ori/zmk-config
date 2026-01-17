@@ -34,10 +34,10 @@ ZMK_MOD_MORPH(UCI_E, bindings = <&ci1 U ERG>, <&ci1 LS(U) ERG>; mods = <(MOD_LSF
 ZMK_MOD_MORPH(UTR_E, bindings = <&tr1 U ERG>, <&tr1 LS(U) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
 
 // Accents with a alt+shift needed for uppercase
-ZMK_MOD_MORPH(ECU_E, bindings = <&kp E_ACUTE>, <&kp LS(RA(E_ACUTE))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
-ZMK_MOD_MORPH(EGR_E, bindings = <&kp E_AGRAV>, <&kp LS(RA(E_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
-ZMK_MOD_MORPH(ECI_E, bindings = <&kp E_CIRC>, <&kp LS(RA(E_CIRC))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
-ZMK_MOD_MORPH(AGR_E, bindings = <&kp A_AGRAV>, <&kp LS(RA(A_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
+ZMK_MOD_MORPH(ECU, bindings = <&kp E_ACUTE>, <&kp LS(RA(E_ACUTE))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
+ZMK_MOD_MORPH(EGR, bindings = <&kp E_AGRAV>, <&kp LS(RA(E_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
+ZMK_MOD_MORPH(ECI, bindings = <&kp E_CIRC>, <&kp LS(RA(E_CIRC))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
+ZMK_MOD_MORPH(AGR, bindings = <&kp A_AGRAV>, <&kp LS(RA(A_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
 // Accents with a alt+shift needed for uppercase
 ZMK_MOD_MORPH(ECU_E, bindings = <&kp1 E_ACUTE ERG>, <&kp1 LS(RA(E_ACUTE)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
 ZMK_MOD_MORPH(EGR_E, bindings = <&kp1 E_AGRAV ERG>, <&kp1 LS(RA(E_AGRAV)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
@@ -50,7 +50,7 @@ ZMK_MOD_MORPH(AGR_E, bindings = <&kp1 A_AGRAV ERG>, <&kp1 LS(RA(A_AGRAV)) ERG>; 
 ////////////////////////
 
 // tap: to EAC | shift + tap: exclamation mark
-ZMK_MOD_MORPH(eac_exl, bindings = <&onecharac EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(eac_exl, bindings = <&onech EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: minus | shift + tap: question mark
 ZMK_MOD_MORPH(min_qst, bindings = <&kp HYPMIN>, <&kp QUEST>; mods = <(MOD_LSFT|MOD_RSFT)>;)
