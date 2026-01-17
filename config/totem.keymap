@@ -57,8 +57,8 @@
 #include "behaviors/hold-tap.dtsi"
 #include "behaviors/combos-totem.dtsi"
 
-// Computer-managed layer - QWERTY-based sent keys, adapted per activated layer on OS
-ZMK_LAYER(Comp,
+// Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
+ZMK_LAYER(Computer,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U         &kp I         &lt EAC O    &kp P
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
