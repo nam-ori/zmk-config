@@ -1,7 +1,7 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
 /* Home Row Mods */
-#define hrm_tap_term 150
-#define hrm_quick_tap 125
+#define hrm_tap_term 350
+#define hrm_quick_tap 175
 
 /* Timerless Home Row Mods */
 /* https://github.com/urob/zmk-config#timeless-homerow-mods */
@@ -9,8 +9,8 @@
 /* left-hand HRMs */
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -20,8 +20,8 @@ ZMK_HOLD_TAP(hml,
 /* right-hand HRMs */
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
@@ -32,8 +32,6 @@ ZMK_HOLD_TAP(hmr,
 // NOTE: Accents on the home row are needed as it seems impossible to pass 
 // parameters to a hold-tap
 
-/* Ergo-L */
-ZMK_MACRO(E_CI_E, bindings = <&e_circ>, <&to ERG>;) // Ê
 
 // homerow mods for ê (Ergo-L)
 ZMK_HOLD_TAP(hrm_ECIRC,
@@ -41,5 +39,34 @@ ZMK_HOLD_TAP(hrm_ECIRC,
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
-    bindings = <&kp>, <&E_CI_E>;
+    bindings = <&kp>, <&ECI>;
+    //bindings = <&kp>, <&ECI_E>;
+)
+
+// homerow mods for ê (Ergo-L)
+ZMK_HOLD_TAP(hrm_ICIRC,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&ICI>;
+    //bindings = <&kp>, <&ICI_E>;
+)
+
+// space or no-break space
+ZMK_HOLD_TAP(space_lt,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&nbspac>;
+)
+
+// space or no-break space
+ZMK_HOLD_TAP(narrowsp_lt,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&nnbspac>;
 )

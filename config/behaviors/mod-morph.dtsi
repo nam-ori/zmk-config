@@ -3,275 +3,185 @@
 ////////////////////////
 
 // tap: backspace | shift + tap: deletemorph_e_circ
-ZMK_MOD_MORPH(bspc_del,
-    bindings = <&kp BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-ZMK_MOD_MORPH(sym_sp_nbsp,
-    bindings = <&lt SYM SPACE>, <&kp RA(SPACE)>;
-    mods = <(MOD_LALT|MOD_RALT|MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(bspc_del, bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(sym_sp_nbsp, bindings = <&lt SYM SPACE>, <&kp RA(SPACE)>; mods = <(MOD_LALT|MOD_RALT|MOD_LSFT|MOD_RSFT)>;)
 
 // tap: backspace | shift + tap: delete | hold: nav layer
-ZMK_MOD_MORPH(bs_del_nav,
-    bindings = <&lt NAV BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(bs_del_nav, bindings = <&lt NAV BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+////////////////////////
+// Ergo-L accent layer
+////////////////////////ZMK_AUTO_LAYER
+
+// MOD-MORPH - lowercase / uppercase accented characters
+// NOTE: Only accents accessed with a dead key on french keyboard need to have this mod-morph
+// Otherwise the shift key will be pressed before the macro and will not be registering
+ZMK_MOD_MORPH(ACI, bindings = <&ci FR_A>, <&ci LS(FR_A)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
+ZMK_MOD_MORPH(ETR, bindings = <&tr E>, <&tr LS(E)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
+ZMK_MOD_MORPH(ICI, bindings = <&ci I>, <&ci LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
+ZMK_MOD_MORPH(ITR, bindings = <&tr I>, <&tr LS(I)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
+ZMK_MOD_MORPH(OCI, bindings = <&ci O>, <&ci LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
+ZMK_MOD_MORPH(OTR, bindings = <&tr O>, <&tr LS(O)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
+ZMK_MOD_MORPH(UCI, bindings = <&ci U>, <&ci LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
+ZMK_MOD_MORPH(UTR, bindings = <&tr U>, <&tr LS(U)>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
+ZMK_MOD_MORPH(ACI_E, bindings = <&ci1 FR_A ERG>, <&ci1 LS(FR_A) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // â / Â
+ZMK_MOD_MORPH(ETR_E, bindings = <&tr1 E ERG>, <&tr1 LS(E) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ë / Ë
+ZMK_MOD_MORPH(ICI_E, bindings = <&ci1 I ERG>, <&ci1 LS(I) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // î / Î
+ZMK_MOD_MORPH(ITR_E, bindings = <&tr1 I ERG>, <&tr1 LS(I) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ï / Ï
+ZMK_MOD_MORPH(OCI_E, bindings = <&ci1 O ERG>, <&ci1 LS(O) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ô / Ô
+ZMK_MOD_MORPH(OTR_E, bindings = <&tr1 O ERG>, <&tr1 LS(O) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ö / Ö
+ZMK_MOD_MORPH(UCI_E, bindings = <&ci1 U ERG>, <&ci1 LS(U) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // û / Û
+ZMK_MOD_MORPH(UTR_E, bindings = <&tr1 U ERG>, <&tr1 LS(U) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ü / Ü
+
+// Accents with a alt+shift needed for uppercase
+ZMK_MOD_MORPH(ECU_E, bindings = <&kp E_ACUTE>, <&kp LS(RA(E_ACUTE))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
+ZMK_MOD_MORPH(EGR_E, bindings = <&kp E_AGRAV>, <&kp LS(RA(E_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
+ZMK_MOD_MORPH(ECI_E, bindings = <&kp E_CIRC>, <&kp LS(RA(E_CIRC))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
+ZMK_MOD_MORPH(AGR_E, bindings = <&kp A_AGRAV>, <&kp LS(RA(A_AGRAV))>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
+// Accents with a alt+shift needed for uppercase
+ZMK_MOD_MORPH(ECU_E, bindings = <&kp1 E_ACUTE ERG>, <&kp1 LS(RA(E_ACUTE)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // é / É
+ZMK_MOD_MORPH(EGR_E, bindings = <&kp1 E_AGRAV ERG>, <&kp1 LS(RA(E_AGRAV)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // è / È
+ZMK_MOD_MORPH(ECI_E, bindings = <&kp1 E_CIRC ERG>, <&kp1 LS(RA(E_CIRC)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // ê / Ê
+ZMK_MOD_MORPH(AGR_E, bindings = <&kp1 A_AGRAV ERG>, <&kp1 LS(RA(A_AGRAV)) ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)  // à / À
+
 
 ////////////////////////
 // Characters mod morphs
 ////////////////////////
 
 // tap: to EAC | shift + tap: exclamation mark
-ZMK_MOD_MORPH(eac_exl,
-    bindings = <&to EAC>, <&kp EXCLM>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(eac_exl, bindings = <&onechar EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: minus | shift + tap: question mark
-ZMK_MOD_MORPH(min_qst,
-    bindings = <&kp HYPMIN>, <&kp QUEST>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(min_qst, bindings = <&kp HYPMIN>, <&kp QUEST>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: period | shift + tap: colon
-ZMK_MOD_MORPH(dot_col,
-    bindings = <&kp PERD>, <&kp CLN>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(dot_col, bindings = <&kp PERD>, <&kp CLN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: comma | shift + tap: semi-colon
-ZMK_MOD_MORPH(comma_semi,
-    bindings = <&kp COMM>, <&kp SEMIC>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(comma_semi, bindings = <&kp COMM>, <&kp SEMIC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: trema | shift + tap: grave -- from ErgoAcc, back to ErgoL
-ZMK_MOD_MORPH(trem_gr1,
-    bindings = <&kp1 CD_TREMA>, <&kp1 CD_ACC_GR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(trem_gr1, bindings = <&kp1 CD_TREMA ERG>, <&kp1 CD_ACC_GR ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(trem_gr, bindings = <&kp CD_TREMA>, <&kp CD_ACC_GR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// tap: no-break hyphen | shift + tap: inverted question
+ZMK_MOD_MORPH(nob_hyph1, bindings = <&kp1 NOB_HYP ERG>, <&kp1 INV_QUEST ERG>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(nob_hyph, bindings = <&kp NOB_HYP>, <&kp INV_QUEST>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// space mod-morphs
+ZMK_MOD_MORPH(nbspac, bindings = <&kp SPACE>, <&kp NBSPC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(nnbspac, bindings = <&kp SPACE>, <&kp NNBSPC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyQ - tap: circ | shift + tap: dead circ
-ZMK_MOD_MORPH(circacc,
-    bindings = <&alive CD_ACC_CI>, <&kp CD_ACC_CI>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(circacc, bindings = <&alive CD_ACC_CI>, <&kp CD_ACC_CI>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyW - tap: lt | shit + tap: let
-ZMK_MOD_MORPH(lessert,
-    bindings = <&kp LTH>, <&kp LETH>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(lessert, bindings = <&kp LTH>, <&kp LETH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyE - tap: gth | shit + tap: geth
-ZMK_MOD_MORPH(greatert,
-    bindings = <&kp GTH>, <&kp GETH>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(greatert, bindings = <&kp GTH>, <&kp GETH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyR - tap: dollar | shift + tap: monetary symbols
-ZMK_MOD_MORPH(dollars,
-    bindings = <&kp DOLL>, <&kp MONET>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(dollars, bindings = <&kp DOLL>, <&kp MONET>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyT - tap: percent | shift + tap: per thousand
-ZMK_MOD_MORPH(perct,
-    bindings = <&kp PERC>, <&kp PERT>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(perct, bindings = <&kp PERC>, <&kp PERT>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyY - tap: arobase | shift + tap: rond
-ZMK_MOD_MORPH(arobase,
-    bindings = <&kp AROB>, <&kp CD_RON>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(arobase, bindings = <&kp AROB>, <&kp CD_RON>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyI - tap: star | shift + tap: multiply (math)
-ZMK_MOD_MORPH(starmul,
-    bindings = <&kp STR>, <&kp MATH_MUL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(starmul, bindings = <&kp STR>, <&kp MATH_MUL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyO - tap: single quote | shift + tap: cute accent
-ZMK_MOD_MORPH(squotecute,
-    bindings = <&kp SQUO>, <&kp CD_ACC_CU>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(squotecute, bindings = <&kp SQUO>, <&kp CD_ACC_CU>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyP - tap: grave | shift + tap: dead grave
-ZMK_MOD_MORPH(graveacc,
-    bindings = <&alive CD_ACC_GR>, <&kp CD_ACC_GR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(graveacc, bindings = <&alive CD_ACC_GR>, <&kp CD_ACC_GR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyA - tap: left brace | shift + tap: caron
-ZMK_MOD_MORPH(lbracecaron,
-    bindings = <&kp LBRAC>, <&kp CD_CAR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(lbracecaron, bindings = <&kp LBRAC>, <&kp CD_CAR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyF - tap: right brace | shift + tap: upper point
-ZMK_MOD_MORPH(rbraceupoin,
-    bindings = <&kp RBRAC>, <&kp CD_UPO>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(rbraceupoin, bindings = <&kp RBRAC>, <&kp CD_UPO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyG - tap: equal | shift + tap: different
-ZMK_MOD_MORPH(equalordif,
-    bindings = <&kp EQUA>, <&kp MATH_DIF>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(equalordif, bindings = <&kp EQUA>, <&kp MATH_DIF>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyH - tap: backslash | shift + tap: oblique
-ZMK_MOD_MORPH(bslashobl,
-    bindings = <&kp BSLSH>, <&kp CD_OBL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(bslashobl, bindings = <&kp BSLSH>, <&kp CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyJ - tap: plus | shift + tap: plus/minus
-ZMK_MOD_MORPH(plusplusm,
-    bindings = <&kp RBKT>, <&kp MATH_PM>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(plusplusm, bindings = <&kp RBKT>, <&kp MATH_PM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyK - tap: minus | shift + tap: macron
-ZMK_MOD_MORPH(hyphenminm,
-    bindings = <&kp HYPMIN>, <&kp MATH_MIN>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(hyphenminm, bindings = <&kp HYPMIN>, <&kp MATH_MIN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyL - tap: slash | shift + tap: division
-ZMK_MOD_MORPH(slashdiv,
-    bindings = <&kp SLSH>, <&kp MATH_DIV>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(slashdiv, bindings = <&kp SLSH>, <&kp MATH_DIV>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+Semicolon - tap: double quote | shift + tap: double cute
-ZMK_MOD_MORPH(dquotecute,
-    bindings = <&kp DQUO>, <&kp CD_ACC_DCU>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(dquotecute, bindings = <&kp DQUO>, <&kp CD_ACC_DCU>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyZ - tap: tilde | shift + tap: dead tilde
-ZMK_MOD_MORPH(tildes,
-    bindings = <&alive CD_TILD>, <&kp CD_TILD>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(tildes, bindings = <&alive CD_TILD>, <&kp CD_TILD>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyX - tap: left bracket | shift + tap: dead comma
-ZMK_MOD_MORPH(lbracketc,
-    bindings = <&kp LBKET>, <&kp CD_COM>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(lbracketc, bindings = <&kp LBKET>, <&kp CD_COM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyC - tap: right bracket | shift + tap: ogonek
-ZMK_MOD_MORPH(rbracketo,
-    bindings = <&kp RBKET>, <&kp CD_OGO>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(rbracketo, bindings = <&kp RBKET>, <&kp CD_OGO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-// Alt+KeyV - tap: underscore | shift + tap: unbreakable hyphen
-ZMK_MOD_MORPH(underscruh,
-    bindings = <&kp UNDSC>, <&kp UNB_HYP>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+// Alt+KeyV - tap: underscore | shift + tap: no-break hyphen
+ZMK_MOD_MORPH(underscruh, bindings = <&kp UNDSC>, <&kp NOB_HYP>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+Comma - tap: semicolon | shift + tap: cedille
-ZMK_MOD_MORPH(semicolced,
-    bindings = <&to SEMIC>, <&kp CD_CED>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(semicolced, bindings = <&to SEMIC>, <&kp CD_CED>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+Period - tap: colon | shift + tap: colon 
 // same char each so it can be tapped with spaces before/after
-ZMK_MOD_MORPH(coloneach,
-    bindings = <&kp CLN>, <&kp CLN>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(coloneach, bindings = <&kp CLN>, <&kp CLN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+Slash - tap: question mark | shift + tap: breve
-ZMK_MOD_MORPH(questionm,
-    bindings = <&kp QUEST>, <&kp CD_BRE>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(questionm, bindings = <&kp QUEST>, <&kp CD_BRE>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit1 - tap: 1 | shift + tap: euro
-ZMK_MOD_MORPH(d1,
-    bindings = <&kp FR_1>, <&kp EURO>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d1, bindings = <&kp FR_1>, <&kp EURO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit2 - tap: 2 | shift + tap: left french (dble) quotes
-ZMK_MOD_MORPH(d2,
-    bindings = <&kp FR_2>, <&kp LFQUO>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d2, bindings = <&kp FR_2>, <&kp LFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit3 - tap: 3 | shift + tap: right french (dble) quotes
-ZMK_MOD_MORPH(d3,
-    bindings = <&kp FR_3>, <&kp RFQUO>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d3, bindings = <&kp FR_3>, <&kp RFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit4 - tap: 4 | shift + tap: dollar
-ZMK_MOD_MORPH(d4,
-    bindings = <&kp FR_4>, <&kp DOLL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d4, bindings = <&kp FR_4>, <&kp DOLL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit5 - tap: 5 | shift + tap: percent
-ZMK_MOD_MORPH(d5,
-    bindings = <&kp FR_5>, <&kp PERC>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d5, bindings = <&kp FR_5>, <&kp PERC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit6 - tap: 6 | shift + tap: power
-ZMK_MOD_MORPH(d6,
-    bindings = <&kp FR_6>, <&alive CD_ACC_CI>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d6, bindings = <&kp FR_6>, <&alive CD_ACC_CI>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit7 - tap: 7 | shift + tap: esperluette
-ZMK_MOD_MORPH(d7,
-    bindings = <&kp FR_7>, <&kp ESPR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d7, bindings = <&kp FR_7>, <&kp ESPR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit8 - tap: 8 | shift + tap: star
-ZMK_MOD_MORPH(d8,
-    bindings = <&kp FR_8>, <&kp STR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d8, bindings = <&kp FR_8>, <&kp STR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit9 - tap: 9 | shift + tap: sharp
-ZMK_MOD_MORPH(d9,
-    bindings = <&kp FR_9>, <&kp SHARP>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d9, bindings = <&kp FR_9>, <&kp SHARP>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit0 - tap: 0 | shift + tap: arobase
-ZMK_MOD_MORPH(d0,
-    bindings = <&kp FR_0>, <&kp AROB>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(d0, bindings = <&kp FR_0>, <&kp AROB>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: plus | shift + tap: minus
-ZMK_MOD_MORPH(plus_minus,
-    bindings = <&kp RBKT>, <&kp HYPMIN>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(plus_minus, bindings = <&kp RBKT>, <&kp HYPMIN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: multiply | shift + tap: divide
-ZMK_MOD_MORPH(multi_div,
-    bindings = <&kp STAR>, <&kp SLSH>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(multi_div, bindings = <&kp STAR>, <&kp SLSH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: comma | shift + tap: dot (period)
-ZMK_MOD_MORPH(comma_dot,
-    bindings = <&kp COMM>, <&kp PERD>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+ZMK_MOD_MORPH(comma_dot, bindings = <&kp COMM>, <&kp PERD>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
