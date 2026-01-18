@@ -1,0 +1,21 @@
+// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/combos_36.dtsi
+#include "./combos.dtsi"
+
+// NOTE: Only combos with the 6th column here (spec. to Totem)
+//       All other combos should be in ./combos.dtsi
+
+
+// ALT+SHIFT - Bottom left 2 keys, active on all layers except game
+ZMK_COMBO(altshift, &kp LA(LSHFT), LB5 LB4, COM ERG EAC SYM NUM)
+
+// CHANGE QWERTY <-> ERGO-L - Bottom left 3 keys, active on all layers except game
+ZMK_COMBO(qw2ergol, &tog ERG, LB5 LB4 LB3, COM ERG EAC SYM NUM)
+
+// NAV Toggle - Left thumbs, active on all layers except gaming (easy access to arrows)
+ZMK_COMBO(nav_toggle, &tog NAV, LB5 LH1, COM ERG EAC NUM SYM NAV)
+
+// NUM Toggle - Left thumbs, active on all inferior layers
+ZMK_COMBO(num_toggle, &tog NAV, LB5 LH0, COM ERG EAC NUM)
+
+// SYM Toggle - Left thumbs, active on all inferior layers
+ZMK_COMBO(sym_toggle, &tog SYM, RB5 RH1, COM ERG EAC NUM SYM)
