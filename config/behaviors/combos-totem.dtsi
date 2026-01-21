@@ -6,16 +6,17 @@
 
 
 // ALT+SHIFT - Bottom left 2 keys, active on all layers except game
-ZMK_COMBO(altshift, &kp LA(LSHFT), LB5 LB4, COM ERG EAC SYM NUM)
+ZMK_COMBO(altshift, &kp LA(LSHFT), LB5 LB4, ERL ERG NUM NUA SYM OPE EAC)
 
 // CHANGE QWERTY <-> ERGO-L - Bottom left 3 keys, active on all layers except game
-ZMK_COMBO(qw2ergol, &tog ERG, LB5 LB4 LB3, COM ERG EAC SYM NUM)
+ZMK_COMBO(qw2ergol, &tog ERG, LB5 LB4 LB3, ERL ERG NUM NUA SYM OPE EAC)
 
-// NAV Toggle - Left thumbs, active on all layers except gaming (easy access to arrows)
-ZMK_COMBO(nav_toggle, &tog NAV, LB5 LH1, COM ERG EAC NUM SYM NAV)
+// NUM Toggle - Both thumbs, active on all inferior layers
+ZMK_COMBO(num_toggle_r, &tog NUM, RB5 RH0, ERL ERG NUM)
+ZMK_COMBO(num_toggle_l, &tog NUM, LB5 LH0, ERL ERG NUM)
 
-// NUM Toggle - Left thumbs, active on all inferior layers
-ZMK_COMBO(num_toggle, &tog NAV, LB5 LH0, COM ERG EAC NUM)
+// SYM Toggle - Right thumb, active on all Ergo-l-AZERTY inferior layers
+ZMK_COMBO(sym_toggle, &tog SYM, RB5 RH1, ERG NUA SYM)
 
-// SYM Toggle - Left thumbs, active on all inferior layers
-ZMK_COMBO(sym_toggle, &tog SYM, RB5 RH1, COM ERG EAC NUM SYM)
+// OPE Toggle - Left thumbs, active on all inferior layers (easy access to arrows)
+ZMK_COMBO(nav_toggle, &tog OPE, LB5 LH2, ERL ERG NUM NUA SYM OPE)

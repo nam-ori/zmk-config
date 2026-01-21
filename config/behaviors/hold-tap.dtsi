@@ -1,4 +1,5 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
+#define std_tap_term 250
 /* Home Row Mods */
 #define hrm_tap_term 350
 #define hrm_quick_tap 175
@@ -41,34 +42,42 @@ ZMK_HOLD_TAP(hrm_ECIRC,
     global-quick-tap;
     bindings = <&kp>, <&ECI>;
     //bindings = <&kp>, <&ECI_E>;
-)
-
-// homerow mods for ê (Ergo-L)
-ZMK_HOLD_TAP(hrm_ICIRC,
-    flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&ICI>;
-    //bindings = <&kp>, <&ICI_E>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
 )
 
 // space or no-break space
 ZMK_HOLD_TAP(space_lt,
     flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    tapping-term-ms = <std_tap_term>;
     bindings = <&mo>, <&nbspac>;
 )
 
-// space or no-break space
-ZMK_HOLD_TAP(narrowsp_lt,
+// space or no-break space and layer if hold
+ZMK_HOLD_TAP(nar_sp_lt,
     flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    tapping-term-ms = <std_tap_term>;
     bindings = <&mo>, <&nnbspac>;
+)
+
+// space or no-break space and key press if hold
+ZMK_HOLD_TAP(nar_sp_mt,
+    flavor = "balanced";
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&nnbspac>;
+)
+
+//  del or no-break space and layer if hold
+ZMK_HOLD_TAP(del_lt,
+    flavor = "balanced";
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&mo>, <&bspc_del>;
+)
+//  del or no-break space and key press if hold
+ZMK_HOLD_TAP(del_mt,
+    flavor = "balanced";
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&bspc_del>;
 )
 
 // space or no-break space
@@ -78,6 +87,8 @@ ZMK_HOLD_TAP(hmlrbrace,
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&rbraceupoin>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
 )
 
 // space or no-break space
@@ -87,6 +98,8 @@ ZMK_HOLD_TAP(hmrplus,
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&plusplusm>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
 )
 
 // space or no-break space
@@ -96,6 +109,8 @@ ZMK_HOLD_TAP(hmrhyphen,
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&hyphenminm>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
 )
 
 

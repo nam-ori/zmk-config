@@ -1,11 +1,13 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/macros.dtsi
+#undef CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS
+#define CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS 40
 
+#undef CONFIG_ZMK_MACRO_DEFAULT_TAP_MS
+#define CONFIG_ZMK_MACRO_DEFAULT_TAP_MS 40
 
 // ACCENTS MACROSZMK_AUTO_LAYER
 // Accents without letter (dead char -> "alive" char)
 ZMK_MACRO_ONE_PARAM(alive,
-    wait-ms = <40>;
-    tap-ms = <40>; 
     bindings =
     <&macro_param_1to1>,
     <&kp MACRO_PLACEHOLDER>,
@@ -14,8 +16,6 @@ ZMK_MACRO_ONE_PARAM(alive,
 
 // UPPER POSITION LETTERS - POWER NUMBER etc.
 ZMK_MACRO_ONE_PARAM(pwr, 
-    wait-ms = <40>;
-    tap-ms = <40>;
     bindings =
         <&kp CD_ACC_CI>,
         <&macro_param_1to1>,
