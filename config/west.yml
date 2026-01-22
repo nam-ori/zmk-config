@@ -13,8 +13,8 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
       import: app/west.yml
+      revision: v0.3
     - name: zmk-keyboard-totem
       remote: bildermankawasaki
 #    - name: zmk-locales
@@ -23,7 +23,12 @@ manifest:
 #      remote: urob
     - name: zmk-helpers
       remote: urob
+      revision: v0.3 # Should match ZMK release.
     - name: zmk-auto-layer
       remote: urob
+      revision: v0.3 # Should match ZMK release.
+    - name: zmk-leader-key
+      remote: urob
+      revision: v0.3 # Should match ZMK release.
   self:
     path: config

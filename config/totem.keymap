@@ -58,6 +58,7 @@
 #include "behaviors/hold-tap.dtsi"
 #include "behaviors/combos-totem.dtsi"
 #include "behaviors/conditional-layers.dtsi"
+#include "behaviors/leader-key.dtsi"
 
 // Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
 // Best with Ergo-L because NavNum accessed from here is maped for Ergo-L
@@ -68,7 +69,7 @@ ZMK_LAYER(ErgolBase,
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
                  &hml GL A   &hml AL S   &hml CL D   &hml SL F    &kp G          &kp H       &hmr SR J     &hmr CR K     &hmr AR L    &hmr GL SEMI
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     &kp CL      &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N       &m_middot     &kp COMMA     &kp PERIOD   &kp SLASH    &kp AL
+     &kp CL      &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA     &kp PERIOD   &kp SLASH    &kp AL
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          &lt OPE ESC &mt SL RET  &del_lt NUM 0  &bspc_del &n_space_mt AR 0 &mt AR TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
@@ -92,7 +93,7 @@ ZMK_LAYER(NavNumBase,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp TAB     &kp HOME    &kp UP      &kp END      &kp PG_UP     &multi_dive  &kp N7        &kp N8        &kp N9       &comma_dote
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &kp CAPS    &kp LEFT    &kp DOWN    &kp RIGHT    &kp PG_DN     &plus_minuse &kp N4        &kp N5        &kp N6       &kp KP_DOT 
+                 &kp CAPS    &kp LEFT    &kp DOWN    &kp RIGHT    &kp PG_DN     &plus_minuse &kp N4        &kp N5        &kp N6       &kp KP_DOT
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &kp INS    &kp PSCRN   &kp SLCK   &kp PAUSE_BREAK &kp K_APP     &kp N0      &kp N1        &kp N2        &kp N3       &equal_oble  ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
