@@ -53,19 +53,19 @@
 
 #include "layouts/azerty-fr-modern.dtsi"
 #include "layouts/ergol.dtsi"
+#include "behaviors/leader-key.dtsi"
 #include "behaviors/macros.dtsi"
 #include "behaviors/mod-morph.dtsi"
 #include "behaviors/hold-tap.dtsi"
 #include "behaviors/combos-totem.dtsi"
 #include "behaviors/conditional-layers.dtsi"
-#include "behaviors/leader-key.dtsi"
 
 // Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
 // Best with Ergo-L because NavNum accessed from here is maped for Ergo-L
 // ERL
 ZMK_LAYER(ErgolBase,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U         &kp I         &kp O        &kp P
+                 &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U         &kp I         &odk_kp O    &kp P
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
                  &hml GL A   &hml AL S   &hml CL D   &hml SL F    &kp G          &kp H       &hmr SR J     &hmr CR K     &hmr AR L    &hmr GL SEMI
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
