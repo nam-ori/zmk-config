@@ -51,6 +51,9 @@ ZMK_MOD_MORPH(AGR_E, bindings = <&kp1 A_AGRAV ERG>, <&kp1 LS(RA(A_AGRAV)) ERG>; 
 // Characters mod morphs
 ////////////////////////
 
+// tap: Ergo-L H (Qwerty M) | AltGr + tap: Ergo-L middle dot (Qwerty AltGr+Period)
+ZMK_MOD_MORPH(m_middot, bindings = <&kp M>, <&kp RA(PERIOD)>; mods = <(MOD_RALT)>;)
+
 // tap: to EAC | shift + tap: exclamation mark
 ZMK_MOD_MORPH(eac_exl, bindings = <&sl EAC>, <&kp EXCLM>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 

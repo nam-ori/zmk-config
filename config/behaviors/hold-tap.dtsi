@@ -54,14 +54,14 @@ ZMK_HOLD_TAP(space_lt,
 )
 
 // space or no-break space and layer if hold
-ZMK_HOLD_TAP(nar_sp_lt,
+ZMK_HOLD_TAP(n_space_lt,
     flavor = "balanced";
     tapping-term-ms = <std_tap_term>;
     bindings = <&mo>, <&nnbspac>;
 )
 
 // space or no-break space and key press if hold
-ZMK_HOLD_TAP(nar_sp_mt,
+ZMK_HOLD_TAP(n_space_mt,
     flavor = "balanced";
     tapping-term-ms = <std_tap_term>;
     bindings = <&kp>, <&nnbspac>;
