@@ -1,0 +1,9 @@
+/ {
+    behaviors {
+        odkleader: onedeadkeyleader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            odkh { sequence = <M>; bindings = <&kp PERIOD>; };
+        };
+    };
+};
