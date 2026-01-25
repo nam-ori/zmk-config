@@ -1,33 +1,37 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/combos.dtsi
 // Combos
 #undef COMBO_TERM
-#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
+#define COMBO_TERM 45  // timeout of 45ms (default is 30ms if omitted)
 //#define HR_TIMEOUT 30  // timeout on homerow is better a bit shorter
 
 /***********************
   ALL LAYERS
 ***********************/
 
-// NOTE: Other thumb key combos are in ./combos_34.dsti and combos_36.dtsi
-
-// NOTE: Other mouse keys related combos in ./mouse.dtsi
-
-// NOTE: Soft off combos in ./soft-off.dtsi
-
-/***********************
-  BASE LAYER
-***********************/
-
 // CUT - Ctrl + X, active on all layers
 ZMK_COMBO(cut, &kp LC(X), LB3 LB4, ERL ERG NUM NUA SYM OPE EAC)
 
-// COPY - Ctrl + C, active on base layer
-ZMK_COMBO(copy, &kp LC(C), LB2 LB3, ERL ERG NUM NUA SYM OPE EAC)
+
+// COPY - Ctrl + C, active on ergol-based layers
+ZMK_COMBO(copy_ergol, &kp LC(W), LB2 LB3, ERL NUM OPE)
+// COPY - Ctrl + C, active on azerty-based layers except gaming
+ZMK_COMBO(copy_azerty, &kp LC(C), LB2 LB3, ERG NUA SYM EAC)
 
 // PASTE - Ctrl + V, active on all layers
 ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM OPE EAC)
 
-// PRINT SCREEN - PrintScreen, active on base layer
+// TAB - with left hand for one-handed usage
+// no position 4-5 to let compose HMR-ALT+A/Q, HMR-GUI+S, ESC combo and CUT combo
+ZMK_COMBO(tab_lefthand, &kp TAB, LT1 LT2, ERL ERG NUM NUA SYM OPE EAC)
+
+// ESC - natural usage on top left position
+ZMK_COMBO(escapeg_natural, &kp TAB, LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
+
+/***********************
+  BASE LAYERS
+***********************/
+
+// PRINT SCREEN - PrintScreen, active on base layers
 ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT3 RT4, ERL ERG)
 
 // CAPS WORD - Both HR Shifts, active on base & accent layers
@@ -39,9 +43,21 @@ ZMK_COMBO(capslock, &kp CAPSLOCK, LM2 RM2, ERL ERG EAC)
 // Toggle Game Layer - active on base and game layer
 ZMK_COMBO(toggle_game, &tog GAM, RT1 RT4, ERL ERG GAM)
 
+
+/***********************
+  OPERATION LAYER
+***********************/
+
+// LOCK SCREEN
+ZMK_COMBO(lockscreen, &kp C_AL_LOCK, RT1 RT2, OPE)
+
+// TURN OFF COMPUTER
+ZMK_COMBO(turnoff, &kp C_POWER, RT1 RT2 RT3,OPE)
+
+
 /***********************
   THUMBS
 ***********************/
 
 // TAB - Inner right thumbs, active on all alpha layers
-ZMK_COMBO(tab, &kp TAB, RH0 RH1, ERL ERG NUM NUA SYM EAC)
+ZMK_COMBO(tab_rthumbs, &kp TAB, RH0 RH1, ERL ERG NUM NUA SYM EAC)
