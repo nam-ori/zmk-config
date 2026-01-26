@@ -61,7 +61,7 @@
 #define MDASH   LS(RA(N8))  // —
 #define UNDSC   RA(N8)      // _
 #define SHARP   LS(GRAVE)   // 
-#define SEMIC   SLASH       // ;
+#define SEMIC   FSLH        // ;
 #define CLN     DOT         // :
 #define PERD    M           // .
 #define COMM    COMMA       // ,
