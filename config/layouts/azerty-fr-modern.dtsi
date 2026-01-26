@@ -60,7 +60,7 @@
 #define NDASH   LS(LBKT)    // –   
 #define MDASH   LS(RA(N8))  // —
 #define UNDSC   RA(N8)      // _
-#define SHARP   LS(GRAVE)   // #
+#define SHARP   LS(GRAVE)   // 
 #define SEMIC   SLASH       // ;
 #define CLN     DOT         // :
 #define PERD    M           // .
