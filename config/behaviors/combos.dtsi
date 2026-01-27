@@ -32,6 +32,9 @@ ZMK_COMBO(escapeg_natural, &kp ESC, LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
 // ALT+ESC - natural usage on top left position
 ZMK_COMBO(escapeg_natural, &kp LA(ESC), LT2 LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
 
+// ENTER - Return, active on all layers
+ZMK_COMBO(paste, &kp RET, RB1 RB2 RB3, ERL ERG NUM NUA SYM OPE EAC)
+
 /***********************
   BASE LAYERS
 ***********************/
