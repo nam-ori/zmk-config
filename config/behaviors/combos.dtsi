@@ -11,7 +11,6 @@
 // CUT - Ctrl + X, active on all layers
 ZMK_COMBO(cut, &kp LC(X), LB3 LB4, ERL ERG NUM NUA SYM OPE EAC)
 
-
 // COPY - Ctrl + C, active on ergol-based layers
 ZMK_COMBO(copy_ergol, &kp LC(W), LB2 LB3, ERL NUM OPE)
 // COPY - Ctrl + C, active on azerty-based layers except gaming
@@ -24,8 +23,14 @@ ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM OPE EAC)
 // no position 4-5 to let compose HMR-ALT+A/Q, HMR-GUI+S, ESC combo and CUT combo
 ZMK_COMBO(tab_lefthand, &kp TAB, LT1 LT2, ERL ERG NUM NUA SYM OPE EAC)
 
+// ALT+TAB - with left hand for one-handed usage
+ZMK_COMBO(tab_lefthand, &kp LA(TAB), LT1 LT2 LT3, ERL ERG NUM NUA SYM OPE EAC)
+
 // ESC - natural usage on top left position
-ZMK_COMBO(escapeg_natural, &kp TAB, LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
+ZMK_COMBO(escapeg_natural, &kp ESC, LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
+
+// ALT+ESC - natural usage on top left position
+ZMK_COMBO(escapeg_natural, &kp LA(ESC), LT2 LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
 
 /***********************
   BASE LAYERS
@@ -33,6 +38,15 @@ ZMK_COMBO(escapeg_natural, &kp TAB, LT3 LT4, ERL ERG NUM NUA SYM OPE EAC)
 
 // PRINT SCREEN - PrintScreen, active on base layers
 ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT3 RT4, ERL ERG)
+
+// BACKSPACE - active on base layers
+ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT1 RT2, ERL ERG)
+
+// DEL - active on base layers
+ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT2 RT3, ERL ERG)
+
+// DEL WORD - Ctrl Del, active on base layers
+ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT1 RT2 RT3, ERL ERG)
 
 // CAPS WORD - Both HR Shifts, active on base & accent layers
 ZMK_COMBO(capsword, &caps_word, LM1 RM1, ERL ERG EAC)
@@ -42,7 +56,6 @@ ZMK_COMBO(capslock, &kp CAPSLOCK, LM2 RM2, ERL ERG EAC)
 
 // Toggle Game Layer - active on base and game layer
 ZMK_COMBO(toggle_game, &tog GAM, RT1 RT4, ERL ERG GAM)
-
 
 /***********************
   OPERATION LAYER
@@ -54,10 +67,7 @@ ZMK_COMBO(lockscreen, &kp C_AL_LOCK, RT1 RT2, OPE)
 // TURN OFF COMPUTER
 ZMK_COMBO(turnoff, &kp C_POWER, RT1 RT2 RT3,OPE)
 
-
 /***********************
   THUMBS
 ***********************/
 
-// TAB - Inner right thumbs, active on all alpha layers
-ZMK_COMBO(tab_rthumbs, &kp TAB, RH0 RH1, ERL ERG NUM NUA SYM EAC)
