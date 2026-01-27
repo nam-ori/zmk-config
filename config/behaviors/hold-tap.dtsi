@@ -1,5 +1,5 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
-#define std_tap_term 250
+#define std_tap_term 300
 /* Home Row Mods */
 #define hrm_tap_term 350
 #define hrm_quick_tap 175
