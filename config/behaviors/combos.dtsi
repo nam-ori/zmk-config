@@ -37,16 +37,16 @@ ZMK_COMBO(escapeg_natural, &kp LA(ESC), LT2 LT3 LT4, ERL ERG NUM NUA SYM OPE EAC
 ***********************/
 
 // PRINT SCREEN - PrintScreen, active on base layers
-ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT3 RT4, ERL ERG)
+ZMK_COMBO(printscreen_top, &kp PRINTSCREEN, RT3 RT4, ERL ERG)
 
 // BACKSPACE - active on base layers
-ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT1 RT2, ERL ERG)
+ZMK_COMBO(backspace_top, &kp BSPC, RT1 RT2, ERL ERG)
 
 // DEL - active on base layers
-ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT2 RT3, ERL ERG)
+ZMK_COMBO(del_top, &kp DEL, RT2 RT3, ERL ERG)
 
 // DEL WORD - Ctrl Del, active on base layers
-ZMK_COMBO(printscreen, &kp PRINTSCREEN, RT1 RT2 RT3, ERL ERG)
+ZMK_COMBO(del_word_top, &kp LC(DEL), RT1 RT2 RT3, ERL ERG)
 
 // CAPS WORD - Both HR Shifts, active on base & accent layers
 ZMK_COMBO(capsword, &caps_word, LM1 RM1, ERL ERG EAC)
