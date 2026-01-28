@@ -47,9 +47,8 @@
 
 // Keys
 #define ___ &trans
-#define XXX &none
 #define BACK &to ERG
-#define BACK_E &tog EAC
+#define PBREAK PAUSE_BREAK
 
 #include "layouts/azerty-fr-modern.dtsi"
 #include "layouts/ergol.dtsi"
@@ -65,39 +64,39 @@
 // ERL
 ZMK_LAYER(ErgolBase,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U         &kp I         &odk_kp O    &kp P
+                 &kp Q       &kp W       &kp E       &hml AL R    &kp T          &kp Y       &kp U         &kp I         &odk_kp O    &kp P
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &hml GL A   &hml AL S   &hml CL D   &hml SL F    &kp G          &kp H       &hmr SR J     &hmr CR K     &hmr AR L    &hmr GL SEMI
+                 &hml GL A   &hml AL S   &hml CL D   &hml SL F    &kp G          &kp H       &hmr SR J     &hmr CR K     &hmr AL L    &hmr GR SEMI
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     &kp CL      &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA     &kp PERIOD   &kp SLASH    &kp AL
+     &kp CL      &kp Z       &hml AR X   &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA   &hmr AR PERIOD &kp SLASH    &kp AL
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         &lt OPE ESC &lt NUM RET &del_mt SL 0   &del_mt AR 0 &lt NUM SPACE &mt AR TAB
+                                         &lt OPE ESC &lt NUM RET &del_mt SL 0    &bspc_del   &lt NUM SPACE &mt AR TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
 // ERG
 ZMK_LAYER(ErgolAz,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp FR_M      &kp D         &eac_exl     &kp Y
+                 &kp FR_Q    &kp C       &kp O       &hml AL P    &kp FR_W       &kp J       &kp FR_M      &kp D         &eac_exl     &kp Y
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                &hml GL FR_A &hml AL S   &hml CL E   &hml SL N    &kp F          &kp L       &hmr SR R     &hmr CR T     &hmr AR I    &hmr GL U
+                &hml GL FR_A &hml AL S   &hml CL E   &hml SL N    &kp F          &kp L       &hmr SR R     &hmr CR T     &hmr AR I    &hmr GR U
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        ___
+     ___         &kp FR_Z  &hml_mo SYM X &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G     &hrm_comma SYM 0 &kp K        ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___        &del_lt SYM 0 &n_space_lt NUM 0 ___
+                                         ___         ___          ___           &bspc_del &n_space_lt NUM 0 ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
 // NUM
 ZMK_LAYER(NavNumBase,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp TAB     &kp HOME    &kp UP      &kp END      &kp PG_UP     &multi_dive  &kp N7        &kp N8        &kp N9       &comma_dote
+                 &kp TAB     &kp HOME    &kp UP      &hml AL END  &kp PG_UP     &multi_dive  &kp N7        &kp N8        &kp N9       &comma_dote
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &kp CAPS    &kp LEFT    &kp DOWN    &kp RIGHT    &kp PG_DN     &plus_minuse &kp N4        &kp N5        &kp N6       &kp KP_DOT
+               &hml GL CAPS  &kp LEFT    &kp DOWN    &kp RIGHT    &kp PG_DN     &plus_minuse &kp N4        &kp N5        &kp N6     &hmr GR KP_DOT
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp INS    &kp PSCRN   &kp SLCK   &kp PAUSE_BREAK &kp K_APP     &kp N0      &kp N1        &kp N2        &kp N3       &equal_oble  ___
+     ___     &hml AR INS &hml AL PSCRN &hml CL SLCK &hml SL PBREAK &kp K_APP     &kp N0      &hmr SR N1    &hmr CR N2   &hmr AL N3  &hrm_equal_e AR 0 ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___           &del_mt AR 0 &lt NUM SPACE ___ 
+                                         ___         ___          ___            &bspc_del   &kp SPACE     ___ 
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
@@ -106,11 +105,11 @@ ZMK_LAYER(NavNumAz,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  ___         ___         ___         ___          ___           &multi_diva  &d7           &d8           &d9          &comma_dota
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 ___         ___         ___         ___          ___           &plus_minusa &d4           &d5           &d6          &kp KP_DOT 
+                 ___         ___         ___         ___          ___           &plus_minusa &d4           &d5           &d6        &hmr GR KP_DOT 
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         ___         ___         ___         ___          ___            &d0         &d1           &d2           &d3          &equal_obla  ___
+     ___         ___         ___         ___         ___          ___            &d0        &hrm_d1 SR 0  &hrm_d2 CR 0 &hrm_d3 AL 0 &hrm_equal_a AR 0 ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___        &del_lt SYM 0 &n_space_lt NUM 0 ___
+                                         ___         ___          ___          &del_lt SYM 0 &nnbspac      ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
@@ -143,11 +142,11 @@ ZMK_LAYER(Operation,
 // EAC
 ZMK_LAYER(ErgAzAcc,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &ACI       &kp C_CEDIL  &kp FR_OE   &OCI         BACK           BACK        &kp MATH_MIC  &kp UNDSC     &trem_gr     &UCI  
+                 &ACI       &kp C_CEDIL  &kp FR_OE   &OCI         BACK           BACK        &kp MATH_MIC  &kp UNDSC     &trem_gr     &UCI
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &AGR        &ECU        &EGR     &hrm_ECIRC SL 0 BACK           &kp LPAREN  &hmr SR RPAREN &ICI         &ITR         &kp U_AGRAV
+                 &AGR        &ECU        &EGR     &hrm_ECIRC SL 0 BACK           &kp LPAREN &hmr SR RPAREN &ICI         &ITR         &kp U_AGRAV
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp FR_AE   &kp S_SHARP &nob_hyph   &kp NDASH    &kp MDASH      &kp T_DOT   &kp M_DOT     &kp GREEK     &kp M_DOT    BACK_E       ___
+     ___         &kp FR_AE   &kp S_SHARP &nob_hyph   &kp NDASH    &kp MDASH      &kp T_DOT   &kp M_DOT     &kp GREEK     &kp M_DOT    BACK         ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          BACK        ___          BACK           BACK        &kp APO       ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
@@ -156,7 +155,7 @@ ZMK_LAYER(ErgAzAcc,
 // GAM
 ZMK_LAYER(Game,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp TAB     &kp Q       &kp W       &kp E        &kp R       &kp PAUSE_BREAK &kp PSCRN    &kp F5        &kp F6       &kp F7
+                 &kp TAB     &kp Q       &kp W       &kp E        &kp R          &kp PBREAK  &kp PSCRN    &kp F5        &kp F6       &kp F7
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
                  &kp SL      &kp A       &kp S       &kp D        &kp F          &kp N1      &kp N2        &kp N3        &kp N4       &kp N5
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮

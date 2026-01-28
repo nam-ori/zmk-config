@@ -18,6 +18,17 @@ ZMK_HOLD_TAP(hml,
     hold-trigger-on-release;
 )
 
+/* left-hand layer HRMs */
+ZMK_HOLD_TAP(hml_mo,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&mo>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+)
+
 /* right-hand HRMs */
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
@@ -29,20 +40,80 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
 )
 
-// ACCENTS HOME ROW MODS
-// NOTE: Accents on the home row are needed as it seems impossible to pass 
-// parameters to a hold-tap
+/* right-hand layer BRM */
+ZMK_HOLD_TAP(hrm_comma,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&mo>, <&comma_semi>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
 
-
-// homerow mods for ê (Ergo-L)
+// homerow mods for ê (Ergo-L-Az)
 ZMK_HOLD_TAP(hrm_ECIRC,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
     global-quick-tap;
     bindings = <&kp>, <&ECI>;
-    //bindings = <&kp>, <&ECI_E>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+)
+
+// baserow mods for 1 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d1,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&d1>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+// baserow mods for 2 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d2,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&d2>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+// baserow mods for 3 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d3,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&d3>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+// baserow mods for = (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_equal_a,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&equal_obla>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+// baserow mods for = (native Ergo-L)
+ZMK_HOLD_TAP(hrm_equal_e,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    global-quick-tap;
+    bindings = <&kp>, <&equal_oble>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
@@ -60,7 +131,7 @@ ZMK_HOLD_TAP(n_space_lt,
     bindings = <&mo>, <&nnbspac>;
 )
 
-// space or no-break space and key press if hold
+// no-break space or narrow no-break space and key press if hold
 ZMK_HOLD_TAP(n_space_mt,
     flavor = "balanced";
     tapping-term-ms = <std_tap_term>;
