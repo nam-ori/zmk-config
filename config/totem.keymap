@@ -24,6 +24,9 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                          // thumbs
 
+#undef SLASH
+#define SLASH MINUS
+
 // Modifier keys
 #define GL LGUI
 #define CL LCTRL
@@ -127,8 +130,8 @@ ZMK_LAYER(Symbols,
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
-// OPE
-ZMK_LAYER(Operation,
+// FCT
+ZMK_LAYER(Function,
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                 &kp LA(F4) &bt BT_SEL 3 &bt BT_SEL 2 &kp C_NEXT  &kp C_VOL_UP   &kp C_BRI_UP &kp F1        &kp F2        &kp F3       &kp F4
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
