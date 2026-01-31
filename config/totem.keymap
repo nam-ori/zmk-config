@@ -41,7 +41,7 @@
 #define NUM 2
 #define NUA 3
 #define SYM 4
-#define OPE 5
+#define FCT 5
 #define EAC 6
 #define GAM 7
 
@@ -53,6 +53,7 @@
 #include "layouts/azerty-fr-modern.dtsi"
 #include "layouts/ergol.dtsi"
 #include "behaviors/leader-key.dtsi"
+#include "behaviors/capsword.dtsi"
 #include "behaviors/macros.dtsi"
 #include "behaviors/mod-morph.dtsi"
 #include "behaviors/hold-tap.dtsi"
@@ -70,7 +71,7 @@ ZMK_LAYER(ErgolBase,
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      &kp CL      &kp Z       &hml AR X   &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA   &hmr AR PERIOD &kp SLASH    &kp AL
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         &lt OPE ESC &lt NUM RET &del_mt SL 0    &bspc_del   &lt NUM SPACE &mt AR TAB
+                                         &lt FCT ESC &lt NUM RET &del_mt SL 0    &bspc_del   &lt NUM SPACE &mt AR TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
