@@ -24,10 +24,10 @@ ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM FCT EAC)
 ZMK_COMBO(tab_lefthand, &kp TAB, LT1 LT2, ERL ERG NUM NUA SYM FCT EAC)
 
 // ESC - natural usage on top left position
-ZMK_COMBO(escapeg_natural, &kp ESC, LT3 LT4, ERL ERG NUM NUA SYM FCT EAC)
+ZMK_COMBO(escapeg, &kp ESC, LT3 LT4, ERL ERG NUM NUA SYM FCT EAC)
 
 // ALT+ESC - natural usage on top left position
-ZMK_COMBO(escapeg_natural, &kp LA(ESC), LT2 LT3 LT4, ERL ERG NUM NUA SYM FCT EAC)
+ZMK_COMBO(altescapeg, &kp LA(ESC), LT2 LT3 LT4, ERL ERG NUM NUA SYM FCT EAC)
 
 // ENTER - Return, active on all layers
 ZMK_COMBO(return_bot, &kp RET, RB1 RB2 RB3, ERL ERG NUM NUA SYM FCT EAC)
@@ -49,11 +49,11 @@ ZMK_COMBO(del_top, &kp DEL, RT2 RT3, ERL ERG)
 ZMK_COMBO(del_word_top, &kp LC(BSPC), RT1 RT2 RT3, ERL ERG)
 
 // CAPS WORD - Both HR Shifts, active on base & accent layers
-ZMK_COMBO(capsword, &cword, LM1 LT1, ERL)
-ZMK_COMBO(capsword, &cword_az, LM1 LT1, ERG EAC)
+ZMK_COMBO(capsword_e, &cword, LM1 RM1, ERL)
+ZMK_COMBO(capsword_a, &cword_az, LM1 RM1, ERG EAC)
 
 // CAPS LOCK - Both HR Controls, active on base & accent layers
-ZMK_COMBO(capslock, &kp CAPSLOCK, LM0 LT0, ERL ERG EAC)
+ZMK_COMBO(capslock_hmr, &kp CAPSLOCK, LM2 RM2, ERL ERG EAC)
 
 // Toggle Game Layer - active on base and game layer
 ZMK_COMBO(toggle_game, &tog GAM, RT1 RT4, ERL ERG GAM)
