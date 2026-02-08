@@ -149,34 +149,57 @@ ZMK_MOD_MORPH(coloneach, bindings = <&kp CLN>, <&kp CLN>; mods = <(MOD_LSFT|MOD_
 ZMK_MOD_MORPH(questionm, bindings = <&kp QUEST>, <&kp CD_BRE>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit1 - tap: 1 | shift + tap: euro
-ZMK_MOD_MORPH(d1, bindings = <&kp FR_1>, <&kp EURO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d1_noalt, bindings = <&kp FR_1>, <&kp EURO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit2 - tap: 2 | shift + tap: left french (dble) quotes
-ZMK_MOD_MORPH(d2, bindings = <&kp FR_2>, <&kp LFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d2_noalt, bindings = <&kp FR_2>, <&kp LFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit3 - tap: 3 | shift + tap: right french (dble) quotes
-ZMK_MOD_MORPH(d3, bindings = <&kp FR_3>, <&kp RFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d3_noalt, bindings = <&kp FR_3>, <&kp RFQUO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit4 - tap: 4 | shift + tap: dollar
-ZMK_MOD_MORPH(d4, bindings = <&kp FR_4>, <&kp DOLL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d4_noalt, bindings = <&kp FR_4>, <&kp DOLL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit5 - tap: 5 | shift + tap: percent
-ZMK_MOD_MORPH(d5, bindings = <&kp FR_5>, <&kp PERC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d5_noalt, bindings = <&kp FR_5>, <&kp PERC>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit6 - tap: 6 | shift + tap: power
-ZMK_MOD_MORPH(d6, bindings = <&kp FR_6>, <&alive CD_ACC_CI>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d6_noalt, bindings = <&kp FR_6>, <&alive CD_ACC_CI>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit7 - tap: 7 | shift + tap: esperluette
-ZMK_MOD_MORPH(d7, bindings = <&kp FR_7>, <&kp ESPR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d7_noalt, bindings = <&kp FR_7>, <&kp ESPR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit8 - tap: 8 | shift + tap: star
-ZMK_MOD_MORPH(d8, bindings = <&kp FR_8>, <&kp STR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d8_noalt, bindings = <&kp FR_8>, <&kp STR>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit9 - tap: 9 | shift + tap: sharp
-ZMK_MOD_MORPH(d9, bindings = <&kp FR_9>, <&kp SHARP>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d9_noalt, bindings = <&kp FR_9>, <&kp SHARP>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Digit0 - tap: 0 | shift + tap: arobase
-ZMK_MOD_MORPH(d0, bindings = <&kp FR_0>, <&kp AROB>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d0_noalt, bindings = <&kp FR_0>, <&kp AROB>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// Digits - AltGr
+ZMK_MOD_MORPH(d1_alt, bindings = <&kp CD_CAR &kp FR_1>, <&kp CD_ACC_CI &kp FR_1>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d2_alt, bindings = <&kp CD_CAR &kp FR_2>, <&kp CD_ACC_CI &kp FR_2>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d3_alt, bindings = <&kp CD_CAR &kp FR_3>, <&kp CD_ACC_CI &kp FR_3>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d4_alt, bindings = <&kp CD_CAR &kp FR_4>, <&kp CD_ACC_CI &kp FR_4>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d5_alt, bindings = <&kp CD_CAR &kp FR_5>, <&kp CD_ACC_CI &kp FR_5>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d6_alt, bindings = <&kp CD_CAR &kp FR_6>, <&kp CD_ACC_CI &kp FR_6>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d7_alt, bindings = <&kp CD_CAR &kp FR_7>, <&kp CD_ACC_CI &kp FR_7>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d8_alt, bindings = <&kp CD_CAR &kp FR_8>, <&kp CD_ACC_CI &kp FR_8>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d9_alt, bindings = <&kp CD_CAR &kp FR_9>, <&kp CD_ACC_CI &kp FR_9>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(d0_alt, bindings = <&kp CD_CAR &kp FR_0>, <&kp CD_ACC_CI &kp FR_0>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+// Digit1 - AltGr or not
+ZMK_MOD_MORPH(d1, bindings = <&d1_noalt>, <&d1_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d2, bindings = <&d2_noalt>, <&d2_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d3, bindings = <&d3_noalt>, <&d3_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d4, bindings = <&d4_noalt>, <&d4_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d5, bindings = <&d5_noalt>, <&d5_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d6, bindings = <&d6_noalt>, <&d6_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d7, bindings = <&d7_noalt>, <&d7_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d8, bindings = <&d8_noalt>, <&d8_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d9, bindings = <&d9_noalt>, <&d9_alt>; mods = <(MOD_RALT)>;)
+ZMK_MOD_MORPH(d0, bindings = <&d0_noalt>, <&d0_alt>; mods = <(MOD_RALT)>;)
 
 // tap: plus | shift + tap: minus
 ZMK_MOD_MORPH(plus_minusa, bindings = <&kp FPLUS>, <&kp HYPMIN>; mods = <(MOD_LSFT|MOD_RSFT)>;)
