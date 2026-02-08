@@ -3,7 +3,8 @@
         odkleader: onedeadkeyleader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            odkh { sequence = <M>; bindings = <&kp PERIOD>; };
+            ignore-keys = <LSHFT RSHFT>;
+            odk_h { sequence = <M>; bindings = <&kp PERIOD>; };
         };
     };
 };
