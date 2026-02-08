@@ -86,7 +86,7 @@ Nav is on the left hand and num on the right one, same layer.
 ![Function layer: bluetooth actions on the left, function keys (`fn`) on the right, sound and brightness settings in the middle](/docs/images/my_keymap_fct.png)
 
 
-### Game - [\GAM]
+### Game - \[GAM]
 
 - \[GAM], or `Game`, from \[ERL] and \[ERG]
 
