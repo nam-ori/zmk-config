@@ -89,3 +89,8 @@ Nav is on the left hand and num on the right one, same layer.
 - \[GAM], or `Game`, from \[ERL] and \[ERG]
 
 ![Game layer: AZERTY left hand moved one column to the right, so that tab, shift and control are placed in the pinky column; numbers and function keys (`fn`) on the right hand; thumb keys are different from other layers](/docs/images/my_keymap_game.png)
+
+
+### Combos
+
+![Lots of combos with two or three fingers; I will detail them as soon as they are stabilized](/docs/images/my_keymap_combos.png)
