@@ -9,7 +9,7 @@
 ***********************/
 
 // CUT - Ctrl + X, active on all layers
-ZMK_COMBO(cut, &kp LC(X), LB2 LB4, ERL ERG NUM NUA SYM FCT EAC)
+ZMK_COMBO(cut_lefthand, &kp LC(X), LB2 LB4, ERL ERG NUM NUA SYM FCT EAC)
 
 // COPY - Ctrl + C, active on ergol-based layers
 ZMK_COMBO(copy_ergol, &kp LC(W), LB2 LB3, ERL NUM FCT)
@@ -17,7 +17,7 @@ ZMK_COMBO(copy_ergol, &kp LC(W), LB2 LB3, ERL NUM FCT)
 ZMK_COMBO(copy_azerty, &kp LC(C), LB2 LB3, ERG NUA SYM EAC)
 
 // PASTE - Ctrl + V, active on all layers
-ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM FCT EAC)
+ZMK_COMBO(paste_lefthand, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM FCT EAC)
 
 // TAB - with left hand for one-handed usage
 // no position 4-5 to let compose HMR-ALT+A/Q, HMR-GUI+S, ESC combo and CUT combo
