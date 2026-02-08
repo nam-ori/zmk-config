@@ -44,9 +44,9 @@ layers:
   - Ç
   - Œ
   - Ô
-  - 
-  - 
-  - 
+  - {t: 'cancel', type: trans}
+  - {t: 'cancel', type: trans}
+  - µ
   - _
   - {t: ◌̈, s: ¡, type: held}
   - Û
@@ -55,8 +55,8 @@ layers:
   - È
   - {t: Ê, h: ⇧}
   - Ñ
-  - 
-  - {h: r⇧}
+  - '('
+  - {t: ')', h: r⇧}
   - Î
   - Ï
   - Ù
@@ -70,7 +70,7 @@ layers:
   - {t: ·, s: •}
   - '*γ'
   - {t: ·, s: •}
-  - 
+  - {t: 'cancel', type: trans}
   - {t: ▽, type: trans}
   - 
   - {t: ▽, type: trans}
