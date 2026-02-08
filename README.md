@@ -31,6 +31,8 @@ This repos is based on many similar others. I won’t guaranty any paternity.
 
 ## Layers
 
+Drawings hereafter are made with [keymap-drawer](https://keymap-drawer.streamlit.app/) by [caksoylar](https://github.com/caksoylar). Here are the [drawings keymap and settings](/keymap-drawer/) used to generate them.
+
 ### Ergo-L - \[ERL] and \[ERG]
 
 - \[ERL], or `ErgolBase`, is the default and is mapped to Ergo-L (no emulation).
