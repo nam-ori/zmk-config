@@ -16,6 +16,7 @@ ZMK_COMBO(num_toggle_r, &tog NUM, RB5 RH0, ERL ERG NUM)
 ZMK_COMBO(num_toggle_l, &tog NUM, LB5 LH0, ERL ERG NUM)
 
 // SYM Toggle - Right thumb, active on all Ergo-l-AZERTY inferior layers
+ZMK_COMBO(altgr_toggle, &kt AR, RB5 RH1, ERL NUM)
 ZMK_COMBO(sym_toggle, &tog SYM, RB5 RH1, ERG NUA SYM)
 
 // FCT Toggle - Left thumbs, active on all inferior layers (easy access to arrows)
