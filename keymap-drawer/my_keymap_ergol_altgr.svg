@@ -183,7 +183,7 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">*</text>
-<text x="0" y="24" class="key hold">×</text>
+<text x="0" y="-24" class="key shifted">×</text>
 </g>
 <g transform="translate(706, 62) rotate(4.0)" class="key keypos-8">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
@@ -201,7 +201,6 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">{</text>
-<text x="0" y="24" class="key hold">⌘</text>
 <text x="0" y="-24" class="key shifted">*ˇ</text>
 </g>
 <g transform="translate(148, 118) rotate(-4.0)" class="key keypos-11">
@@ -214,13 +213,13 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">)</text>
-<text x="0" y="24" class="key hold">⎈</text>
+<text x="0" y="24" class="key hold">⌘</text>
 </g>
 <g transform="translate(271, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">}</text>
-<text x="0" y="24" class="key hold">⇧</text>
+<text x="0" y="24" class="key hold">⎈</text>
 <text x="0" y="-24" class="key shifted">*˙</text>
 </g>
 <g transform="translate(330, 121)" class="key keypos-14">
@@ -239,14 +238,14 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">+</text>
-<text x="0" y="24" class="key hold">r⇧</text>
+<text x="0" y="24" class="key hold">r⎈</text>
 <text x="0" y="-24" class="key shifted">±</text>
 </g>
 <g transform="translate(639, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">-</text>
-<text x="0" y="24" class="key hold">r⎈</text>
+<text x="0" y="24" class="key hold">r⌘</text>
 <text x="0" y="-24" class="key shifted">*¯</text>
 </g>
 <g transform="translate(703, 118) rotate(4.0)" class="key keypos-18">
@@ -260,7 +259,6 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">&quot;</text>
-<text x="0" y="24" class="key hold">r⌘</text>
 <text x="0" y="-24" class="key shifted">*˝</text>
 </g>
 <g transform="translate(34, 209) rotate(-10.0)" class="key trans keypos-20">
@@ -274,11 +272,11 @@ path.combo { stroke: #7f7f7f; }
 <text x="0" y="-4" class="key tap">~</text>
 <text x="0" y="-24" class="key shifted">*~</text>
 </g>
-<g transform="translate(152, 174) rotate(-4.0)" class="key held keypos-22">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key held"/>
-<text x="0" y="-4" class="key held tap">[</text>
-<text x="0" y="-24" class="key held shifted">*,</text>
+<g transform="translate(152, 174) rotate(-4.0)" class="key keypos-22">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">[</text>
+<text x="0" y="-24" class="key shifted">*,</text>
 </g>
 <g transform="translate(212, 140)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
@@ -315,10 +313,10 @@ path.combo { stroke: #7f7f7f; }
 <text x="0" y="-4" class="key tap">;</text>
 <text x="0" y="-24" class="key shifted">*¸</text>
 </g>
-<g transform="translate(699, 174) rotate(4.0)" class="key held keypos-29">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key held"/>
-<text x="0" y="-4" class="key held tap">:</text>
+<g transform="translate(699, 174) rotate(4.0)" class="key keypos-29">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">:</text>
 </g>
 <g transform="translate(754, 223) rotate(10.0)" class="key keypos-30">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
@@ -351,16 +349,16 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key trans"/>
 <text x="0" y="-4" class="key trans tap">▽</text>
 </g>
-<g transform="translate(531, 245) rotate(-15.0)" class="key keypos-36">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">␣</text>
-<text x="0" y="-24" class="key shifted">⍽</text>
-</g>
-<g transform="translate(596, 236)" class="key held keypos-37">
+<g transform="translate(531, 245) rotate(-15.0)" class="key held keypos-36">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key held side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key held"/>
-<text x="0" y="-4" class="key held tap">▽</text>
+<text x="0" y="-4" class="key held tap">␣</text>
+<text x="0" y="-24" class="key held shifted">⍽</text>
+</g>
+<g transform="translate(596, 236)" class="key trans keypos-37">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key trans"/>
+<text x="0" y="-4" class="key trans tap">▽</text>
 </g>
 </g>
 </g>

@@ -11,7 +11,7 @@ Key mapping will be (1) transparent Ergo-L and (2) Ergo-L (keyboard pressed) to 
 
 My goal was to get a working keyboard on both Linux and Windows. My first toughts were to use AZERTY legacy for the main letters; and AZERTY alt. for Linux (the most used layout on Linux in France) and ALT+unicode values for Windows, as separate keyboard layers maybe?
 
-Since Windows 11 24H2, Windows is providing "AZERTY AFNOR" layout; most Linux distros are providing it to. The simplier the better: I created a mapping to that layout, which would then work for both systems. It is accessible by the LB 2-3-4 combo.
+Since Windows 11 24H2, Windows is providing "AZERTY AFNOR" layout; most Linux distros are providing it to. The simplier the better: I created a mapping to that layout, which would then work for both systems. It is accessible by the LB 3-4-5 combo.
 
 _*Warning:*_ I do not aim to apply extensively the AFNOR-distributed layout. First of all, this layout is not open, and I do not have access to it. And second of all, my aim is only to provide characters mapping for those included in Ergo-L layout. The dead keys, managed by the OS, could give access to all of AFNOR layout mappings if the OS respect the AFNOR standard; I cannot and will not garanty that. I only comply to the observed behavior without any engineering.
 
@@ -43,14 +43,14 @@ Drawings hereafter are made with [keymap-drawer](https://keymap-drawer.streamlit
 Texts at the bottom of the keys are the result of a hold action, if different.
 
 Left thumb can do, from right to left:
-- on tap: backspace, or delete with shift (symetrical); on hold: shift (which is also on HRM)
-- on tap: enter (return); on hold: temporary activate the num layer (symetrical)
-- on tap: backspace, or delete with shift; on hold: shift (which is also on HRM)
+- on tap: enter (return); on hold: temporary activate the nav num layer (symetrical)
+- on tap: sticky shift; on hold: normal shift
+- on tap: escape; on hold: temporary activate the function layer
 
 Right thumb can do, from left to right:
-- on tap: backspace, or delete with shift (which is also present at the same place on the right thumb); no hold action here, so one can multi-tap backspace by holding (I know, it’s bad)
-- on tap: space, or narrow no-break space with shif (as in Ergo-L layout); on hold: temporary activate the num layer (symetrical)
-- on tap: tab, or right alt (AltGr); on hold: right alt (AltGr) (with AZERTY mapping: here is the real one, not the emulated one; emulated Ergo-L layout AltGr is the SYM layer accessible from HRM)
+- on tap: backspace; on hold: temporary activate the nav num layer (symetrical)
+- on tap: space, or narrow no-break space with shif (as in Ergo-L layout); on hold: AltGr (`ErgolBase`) or temporary activate the SYM layer (`ErgolAz`)
+- on tap: tab
 
 *Note:* the temporary hold actions on the thumbs can be toggled in combo with the extra pinky buttons. Those buttons do control on the left hand and left alt (Alt) on the right hand, without combo.
 
