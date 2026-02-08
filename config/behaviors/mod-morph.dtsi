@@ -225,3 +225,6 @@ ZMK_MOD_MORPH(comma_dote, bindings = <&kp E_COMM>, <&kp E_PERD>; mods = <(MOD_LS
 
 // tap: equal | shift + tap: slash (difference symbols)
 ZMK_MOD_MORPH(equal_oble, bindings = <&kp E_EQUA>, <&kp E_CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// tap: decim sep | shift + tap: list sep
+ZMK_MOD_MORPH(decim_sep, bindings = <&kp KP_DOT>, <&kp KP_COMMA>; mods = <(MOD_LSFT|MOD_RSFT)>;)
