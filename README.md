@@ -55,7 +55,7 @@ Right thumb can do, from left to right:
 *Note:* the temporary hold actions on the thumbs can be toggled in combo with the extra pinky buttons. Those buttons do control on the left hand and left alt (Alt) on the right hand, without combo.
 
 
-### Nav-Num - \[ERL] and \[ERG]
+### Nav-Num - \[NUM] and \[NUA]
 
 - \[NUM], or `NavNumBase`, from \[ERL], mapped to Ergo-L
 - \[NUA], or `NavNumAz`, from \[ERG], mapped to AZERTY
