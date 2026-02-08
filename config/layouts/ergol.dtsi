@@ -1,7 +1,7 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/layouts/canadian-multilingual-standard.dtsi
 
 /* Mappings for Ergo-L
- * Very partial: just for NavNum layer 
+ * Very partial: just for my NavNum layer config
  */
 
 #define E_FPLUS   LS(EQUAL)   // +
