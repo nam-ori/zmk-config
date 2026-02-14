@@ -50,7 +50,7 @@ Left thumb can do, from right to left:
 Right thumb can do, from left to right:
 - on tap: backspace; on hold: temporary activate the nav num layer (symetrical)
 - on tap: space, or narrow no-break space with shif (as in Ergo-L layout); on hold: AltGr (`ErgolBase`) or temporary activate the SYM layer (`ErgolAz`)
-- on tap: tab
+- on tap: tab; on hold: AltGr
 
 *Note:* the temporary hold actions on the thumbs can be toggled in combo with the extra pinky buttons. Those buttons do control on the left hand and left alt (Alt) on the right hand, without combo.
 

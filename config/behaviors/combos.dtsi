@@ -21,7 +21,7 @@ ZMK_COMBO(paste_lefthand, &kp LC(V), LB1 LB2, ERL ERG NUM NUA SYM FCT EAC)
 
 // TAB - with left hand for one-handed usage
 // no position 4-5 to let compose HMR-ALT+A/Q, HMR-GUI+S, ESC combo and CUT combo
-ZMK_COMBO(tab_lefthand, &kp TAB, LT1 LT2, ERL ERG NUM NUA SYM FCT EAC)
+ZMK_COMBO(tab_lefthand, &kp TAB, LT2 LT3, ERL ERG NUM NUA SYM FCT EAC)
 
 // ESC - natural usage on top left position
 ZMK_COMBO(escapeg, &kp ESC, LT3 LT4, ERL ERG NUM NUA SYM FCT EAC)

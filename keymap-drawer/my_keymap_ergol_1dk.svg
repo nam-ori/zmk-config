@@ -193,24 +193,25 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">À</text>
+<text x="0" y="24" class="key hold">⇧</text>
 </g>
 <g transform="translate(148, 118) rotate(-4.0)" class="key keypos-11">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">É</text>
-<text x="0" y="24" class="key hold">⎇</text>
+<text x="0" y="24" class="key hold">os</text>
 </g>
 <g transform="translate(212, 84)" class="key keypos-12">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">È</text>
-<text x="0" y="24" class="key hold">⌘</text>
+<text x="0" y="24" class="key hold">ctrl</text>
 </g>
 <g transform="translate(271, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">Ê</text>
-<text x="0" y="24" class="key hold">⎈</text>
+<text x="0" y="24" class="key hold">alt</text>
 </g>
 <g transform="translate(330, 121)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
@@ -226,24 +227,25 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">)</text>
-<text x="0" y="24" class="key hold">r⎈</text>
+<text x="0" y="24" class="key hold">alt</text>
 </g>
 <g transform="translate(639, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">Î</text>
-<text x="0" y="24" class="key hold">r⌘</text>
+<text x="0" y="24" class="key hold">ctrl</text>
 </g>
 <g transform="translate(703, 118) rotate(4.0)" class="key keypos-18">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">Ï</text>
-<text x="0" y="24" class="key hold">⎇</text>
+<text x="0" y="24" class="key hold">os</text>
 </g>
 <g transform="translate(764, 168) rotate(10.0)" class="key keypos-19">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="43" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">Ù</text>
+<text x="0" y="24" class="key hold">⇧</text>
 </g>
 <g transform="translate(34, 209) rotate(-10.0)" class="key trans keypos-20">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans side"/>
