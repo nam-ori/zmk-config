@@ -1,10 +1,63 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
+/* Standard */
 #define std_tap_term 200
+#define std_quick_tap 200
+/* Sticky */
 #define sticky_tap_term 250
 /* Home Row Mods */
 #define hrm_tap_term 250
 #define hrm_quick_tap 200
 #define hrm_prior_idle 125
+
+&mt {
+  tapping-term-ms = <std_tap_term>;
+  quick-tap-ms = <std_quick_tap>;
+};
+
+&lt{
+  tapping-term-ms = <std_tap_term>;
+  quick-tap-ms = <std_quick_tap>;
+};
+
+// space or narrow no-break space and layer if hold
+ZMK_HOLD_TAP(n_space_lt,
+    flavor = "balanced";
+    quick-tap-ms = <std_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&mo>, <&nnbspac>;
+)
+
+// space or narrow no-break space and key press if hold
+ZMK_HOLD_TAP(n_space_mt,
+    flavor = "balanced";
+    quick-tap-ms = <std_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&nnbspac>;
+)
+
+//  backspace or del and layer if hold
+ZMK_HOLD_TAP(del_lt,
+    flavor = "balanced";
+    quick-tap-ms = <std_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&mo>, <&bspc_del>;
+)
+
+//  backspace or del and key press if hold
+ZMK_HOLD_TAP(del_mt,
+    flavor = "balanced";
+    quick-tap-ms = <std_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&bspc_del>;
+)
+
+ZMK_HOLD_TAP(sticky,
+    flavor = "tap-preferred";
+    tapping-term-ms = <sticky_tap_term>;
+    bindings = <&kp>, <&sk>;
+    hold-while-undecided-linger;
+)
+
 
 /* Timerless Home Row Mods */
 /* https://github.com/urob/zmk-config#timeless-homerow-mods */
@@ -144,43 +197,4 @@ ZMK_HOLD_TAP(hmrdquote,
     bindings = <&kp>, <&dquotecute>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
-)
-
-// space or narrow no-break space and layer if hold
-ZMK_HOLD_TAP(n_space_lt,
-    flavor = "balanced";
-    quick-tap-ms = <hrm_quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&nnbspac>;
-)
-
-// space or narrow no-break space and key press if hold
-ZMK_HOLD_TAP(n_space_mt,
-    flavor = "balanced";
-    quick-tap-ms = <hrm_quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&kp>, <&nnbspac>;
-)
-
-//  backspace or del and layer if hold
-ZMK_HOLD_TAP(del_lt,
-    flavor = "balanced";
-    quick-tap-ms = <hrm_quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&bspc_del>;
-)
-
-//  backspace or del and key press if hold
-ZMK_HOLD_TAP(del_mt,
-    flavor = "balanced";
-    quick-tap-ms = <hrm_quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&kp>, <&bspc_del>;
-)
-
-ZMK_HOLD_TAP(sticky,
-    flavor = "tap-preferred";
-    tapping-term-ms = <sticky_tap_term>;
-    bindings = <&kp>, <&sk>;
-    hold-while-undecided-linger;
 )
