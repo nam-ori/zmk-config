@@ -5,12 +5,6 @@
 // tap: backspace | shift + tap: suppr
 ZMK_MOD_MORPH(bspc_del, bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-// tap: hold tap layer SYM / space | shift + tap: no-break space
-//ZMK_MOD_MORPH(sym_sp_nbsp, bindings = <&lt SYM SPACE>, <&kp RA(SPACE)>; mods = <(MOD_LALT|MOD_RALT|MOD_LSFT|MOD_RSFT)>;)
-
-// tap: backspace | shift + : delete | hold: nav layer
-//ZMK_MOD_MORPH(bs_del_nav, bindings = <&lt NAV BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
-
 ////////////////////////
 // Ergo-L accent layer
 ////////////////////////ZMK_AUTO_LAYER
@@ -109,7 +103,7 @@ ZMK_MOD_MORPH(lbracecar, bindings = <&kp LBRAC>, <&kp CD_CAR>; mods = <(MOD_LSFT
 ZMK_MOD_MORPH(rbraceupoin, bindings = <&kp RBRAC>, <&kp CD_UPO>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyG - tap: equal | shift + tap: different
-ZMK_MOD_MORPH(equalordif, bindings = <&kp EQUA>, <&kp MATH_DIF>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(equaldif, bindings = <&kp EQUA>, <&kp MATH_DIF>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // Alt+KeyH - tap: backslash | shift + tap: oblique
 ZMK_MOD_MORPH(bslashobl, bindings = <&kp BSLSH>, <&kp CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
@@ -211,7 +205,8 @@ ZMK_MOD_MORPH(multi_diva, bindings = <&kp STR>, <&kp SLSH>; mods = <(MOD_LSFT|MO
 ZMK_MOD_MORPH(comma_dota, bindings = <&kp COMM>, <&kp PERD>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // tap: equal | shift + tap: slash (difference symbols)
-ZMK_MOD_MORPH(equal_obla, bindings = <&kp EQUA>, <&kp CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(equal_a, bindings = <&kp EQUA>, <&kp CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(equal_e, bindings = <&kp E_EQUA>, <&kp E_CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // same last 4 for Ergo-L computer layer
 // tap: plus | shift + tap: minus
@@ -223,8 +218,6 @@ ZMK_MOD_MORPH(multi_dive, bindings = <&kp E_STR>, <&kp E_SLSH>; mods = <(MOD_LSF
 // tap: comma | shift + tap: dot (period)
 ZMK_MOD_MORPH(comma_dote, bindings = <&kp E_COMM>, <&kp E_PERD>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-// tap: equal | shift + tap: slash (difference symbols)
-ZMK_MOD_MORPH(equal_oble, bindings = <&kp E_EQUA>, <&kp E_CD_OBL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
-
-// tap: decim sep | shift + tap: list sep
-ZMK_MOD_MORPH(decim_sep, bindings = <&kp KP_DOT>, <&kp KP_COMMA>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+// tap: decim sep | shift + tap: semicolon
+ZMK_MOD_MORPH(decim_sepe, bindings = <&kp KP_DOT>, <&kp E_SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(decim_sepa, bindings = <&kp KP_DOT>, <&kp SEMIC>; mods = <(MOD_LSFT|MOD_RSFT)>;)

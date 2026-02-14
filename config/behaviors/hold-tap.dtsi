@@ -1,9 +1,10 @@
 // Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
-#define std_tap_term 300
-#define sticky_tap_term 500
+#define std_tap_term 200
+#define sticky_tap_term 250
 /* Home Row Mods */
-#define hrm_tap_term 350
-#define hrm_quick_tap 175
+#define hrm_tap_term 250
+#define hrm_quick_tap 200
+#define hrm_prior_idle 125
 
 /* Timerless Home Row Mods */
 /* https://github.com/urob/zmk-config#timeless-homerow-mods */
@@ -13,19 +14,8 @@ ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
-)
-
-/* left-hand layer HRMs */
-ZMK_HOLD_TAP(hml_mo,
-    flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&mo>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
 )
@@ -35,139 +25,82 @@ ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
-/* right-hand layer BRM */
-ZMK_HOLD_TAP(hrm_comma,
+// baserow mods for 0 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_decim_e,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&mo>, <&comma_semi>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&decim_sepe>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
-)
-
-// homerow mods for ê (Ergo-L-Az)
-ZMK_HOLD_TAP(hrm_ECIRC,
-    flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&ECI>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
 )
 
 // baserow mods for 0 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d0,
+ZMK_HOLD_TAP(hrm_decim_a,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&d0>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&decim_sepa>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
-// baserow mods for 1 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d1,
+// baserow mods for 4 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d4,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&d1>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&d4>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
-// baserow mods for 2 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d2,
+// baserow mods for 5 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d5,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&d2>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&d5>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
-// baserow mods for 3 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d3,
+// baserow mods for 6 (Ergo-L on Azerty)
+ZMK_HOLD_TAP(hrm_d6,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&d3>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&d6>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
-// baserow mods for = (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_equal_a,
+ZMK_HOLD_TAP(hmllbrace,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&equal_obla>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&lbracecar>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
-)
-
-// baserow mods for = (native Ergo-L)
-ZMK_HOLD_TAP(hrm_equal_e,
-    flavor = "balanced";
-    tapping-term-ms = <hrm_tap_term>;
-    quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
-    bindings = <&kp>, <&equal_oble>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
-)
-
-// space or no-break space and layer if hold
-ZMK_HOLD_TAP(space_lt,
-    flavor = "balanced";
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&nbspac>;
-)
-
-// space or narrow no-break space and layer if hold
-ZMK_HOLD_TAP(n_space_lt,
-    flavor = "balanced";
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&nnbspac>;
-)
-
-// space or narrow no-break space and key press if hold
-ZMK_HOLD_TAP(n_space_mt,
-    flavor = "balanced";
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&kp>, <&nnbspac>;
-)
-
-//  backspace or del and layer if hold
-ZMK_HOLD_TAP(del_lt,
-    flavor = "balanced";
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&bspc_del>;
-)
-//  backspace or del and key press if hold
-ZMK_HOLD_TAP(del_mt,
-    flavor = "balanced";
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&kp>, <&bspc_del>;
 )
 
 ZMK_HOLD_TAP(hmlrbrace,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&rbraceupoin>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
@@ -177,7 +110,7 @@ ZMK_HOLD_TAP(hmrplus,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&plusplusm>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
@@ -187,7 +120,7 @@ ZMK_HOLD_TAP(hmrhyphen,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&hyphenminm>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
@@ -197,16 +130,57 @@ ZMK_HOLD_TAP(hmrslash,
     flavor = "balanced";
     tapping-term-ms = <hrm_tap_term>;
     quick-tap-ms = <hrm_quick_tap>;
-    global-quick-tap;
+    require-prior-idle-ms = <hrm_prior_idle>;
     bindings = <&kp>, <&slashdiv>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
+ZMK_HOLD_TAP(hmrdquote,
+    flavor = "balanced";
+    tapping-term-ms = <hrm_tap_term>;
+    quick-tap-ms = <hrm_quick_tap>;
+    require-prior-idle-ms = <hrm_prior_idle>;
+    bindings = <&kp>, <&dquotecute>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+// space or narrow no-break space and layer if hold
+ZMK_HOLD_TAP(n_space_lt,
+    flavor = "balanced";
+    quick-tap-ms = <hrm_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&mo>, <&nnbspac>;
+)
+
+// space or narrow no-break space and key press if hold
+ZMK_HOLD_TAP(n_space_mt,
+    flavor = "balanced";
+    quick-tap-ms = <hrm_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&nnbspac>;
+)
+
+//  backspace or del and layer if hold
+ZMK_HOLD_TAP(del_lt,
+    flavor = "balanced";
+    quick-tap-ms = <hrm_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&mo>, <&bspc_del>;
+)
+
+//  backspace or del and key press if hold
+ZMK_HOLD_TAP(del_mt,
+    flavor = "balanced";
+    quick-tap-ms = <hrm_quick_tap>;
+    tapping-term-ms = <std_tap_term>;
+    bindings = <&kp>, <&bspc_del>;
+)
+
 ZMK_HOLD_TAP(sticky,
-    flavor = "hold-preferred";
+    flavor = "tap-preferred";
     tapping-term-ms = <sticky_tap_term>;
     bindings = <&kp>, <&sk>;
     hold-while-undecided-linger;
 )
-

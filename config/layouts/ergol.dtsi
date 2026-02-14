@@ -10,5 +10,6 @@
 #define E_SLSH    MINUS       // //
 #define E_PERD    N           // .
 #define E_COMM    PERIOD      // ,
+#define E_SEMI    LS(PERIOD)  // ;
 #define E_EQUA    EQUAL       // =
 #define E_CD_OBL  LS(RA(H))   //  ̷*
