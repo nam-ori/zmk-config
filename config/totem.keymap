@@ -64,6 +64,29 @@
     quick-release;
 };
 
+#ifndef TAPPING_TERM
+#define TAPPING_TERM 300
+#endif
+
+/ {
+  behaviors {
+    // like ZMK's sticky key (sk) but with a more robust timing
+    osm: one_shot_modifier {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+    };
+    bsk: better_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&osm>;
+    };
+  };
+};
 
 // Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
 // Best with Ergo-L because NavNum accessed from here is maped for Ergo-L
@@ -76,7 +99,7 @@ ZMK_LAYER(ErgolBase,
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      &kp CL      &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA     &kp PERIOD   &kp SLASH    &kp AL
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                        &lt FCT ESC &sticky SL SL &lt NUM RET   &lt NUM BSPC &mt AR SPACE  &mt AR TAB
+                                        &lt FCT ESC &bsk SL SL &lt NUM RET   &lt NUM BSPC &mt AR SPACE  &mt AR TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
 )
 
