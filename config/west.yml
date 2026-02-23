@@ -4,31 +4,27 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
     - name: bildermankawasaki
       url-base: https://github.com/bildermankawasaki
-#    - name: joelspadin
-#      url-base: https://github.com/joelspadin
+    - name: urob
+      url-base: https://github.com/urob
+    - name: ArturitoGit
+      url-base: https://github.com/ArturitoGit
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-      revision: v0.3
+      revision: main
     - name: zmk-keyboard-totem
       remote: bildermankawasaki
-#    - name: zmk-locales
-#      remote: joelspadin
-#    - name: zmk-unicode
-#      remote: urob
     - name: zmk-helpers
       remote: urob
-      revision: v0.3 # Should match ZMK release.
-    - name: zmk-auto-layer
-      remote: urob
-      revision: v0.3 # Should match ZMK release.
+      revision: main # Should match ZMK release.
     - name: zmk-leader-key
       remote: urob
-      revision: v0.3 # Should match ZMK release.
+      revision: main # Should match ZMK release.
+    - name: zmk-behavior-locale-capsword
+      revision: main
+      remote: ArturitoGit
   self:
     path: config

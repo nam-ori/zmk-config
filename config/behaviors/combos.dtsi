@@ -1,4 +1,4 @@
-// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/combos.dtsi
+#include "zmk-helpers/helper.h"
 // Combos
 #undef COMBO_TERM
 #define COMBO_TERM 45  // timeout of 45ms (default is 30ms if omitted)

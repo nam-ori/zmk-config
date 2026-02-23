@@ -1,69 +1,64 @@
-// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/macros.dtsi
-#undef CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS
-#define CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS 40
+#define MACRO_DEFAULT_TAP_MS 40
+#define MACRO_DEFAULT_WAIT_MS 40
 
-#undef CONFIG_ZMK_MACRO_DEFAULT_TAP_MS
-#define CONFIG_ZMK_MACRO_DEFAULT_TAP_MS 40
-
-// ACCENTS MACROSZMK_AUTO_LAYER
-// Accents without letter (dead char -> "alive" char)
-ZMK_MACRO_ONE_PARAM(alive,
-    bindings =
-    <&macro_param_1to1>,
-    <&kp MACRO_PLACEHOLDER>,
-    <&kp SPACE>;
-)
-
-// UPPER POSITION LETTERS - POWER NUMBER etc.
-ZMK_MACRO_ONE_PARAM(pwr, 
-    bindings =
-        <&kp CD_ACC_CI>,
-        <&macro_param_1to1>,
-        <&kp MACRO_PLACEHOLDER>;
-)
-
-// KEYMAP MACROS
-// The following macros return to the specified layer after being pressed
-
-// General - intended for accents layer(s)
-// (name = Key press (kp) once (1) then go back to layer)
-ZMK_MACRO_TWO_PARAM(kp1, bindings = 
-    <&macro_param_1to1>, 
-    <&kp MACRO_PLACEHOLDER>, 
-    <&macro_param_2to1>, 
-    <&to MACRO_PLACEHOLDER>;
-)
-// For any character but back to Ergo-L layer so from ErgoAcc
-// (name = Key press (kp) once (1) then go back to layer)
-ZMK_MACRO_ONE_PARAM(kp1e, bindings = 
-    <&macro_param_1to1>, 
-    <&kp MACRO_PLACEHOLDER>, 
-    <&to ERG>;
-)
-// Circ acc ^
-ZMK_MACRO_ONE_PARAM(ci, bindings = 
-    <&macro_param_1to1>, 
-    <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>;
-)
-ZMK_MACRO_TWO_PARAM(ci1, bindings = 
-    <&macro_param_1to1>, 
-    <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>, 
-    <&macro_param_2to1>, 
-    <&to MACRO_PLACEHOLDER>;
-)
-// Trema "
-ZMK_MACRO_ONE_PARAM(tr, bindings = 
-    <&macro_param_1to1>, 
-    <&kp CD_TREMA &kp MACRO_PLACEHOLDER>;
-)
-ZMK_MACRO_TWO_PARAM(tr1, bindings = 
-    <&macro_param_1to1>, 
-    <&kp CD_TREMA &kp MACRO_PLACEHOLDER>, 
-    <&macro_param_2to1>, 
-    <&to MACRO_PLACEHOLDER>;
-)
-
-ZMK_MACRO_ONE_PARAM(odk_kp, bindings = 
-    <&macro_param_1to1>, 
-    <&kp MACRO_PLACEHOLDER &odkleader>;
-)
+/ {
+  behaviors {
+    
+    /*
+     *
+     * ACCENTS MACROS
+     * 
+     */
+    
+    // Accents without letter (dead char -> "alive" char)
+    alive: alive_accent_from_dead_key {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &kp SPACE>;
+    };
+    
+    // Circ acc ^
+    acc_ci: put_circ_accent {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_param_1to1>, <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>;
+    };
+    
+    // Trema "
+    acc_tr: put_trema {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_param_1to1>, <&kp CD_TREMA &kp MACRO_PLACEHOLDER>;
+    };
+    
+    /*
+     *
+     * NUM MACROS
+     * 
+     */
+    
+    // Exponent
+    num_exp: num_exponent {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_param_1to1>, <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>;
+    };
+    
+    // Index
+    num_ind: num_index {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_param_1to1>, <&kp CD_CAR &kp MACRO_PLACEHOLDER>;
+    };
+  };
+};

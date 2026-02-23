@@ -1,5 +1,16 @@
-// ergo-l by default
-ZMK_CAPS_WORD(cword, continue-list = <Q W E R T Y U I O P A S D F G H J K L SEMI Z X V B M COMMA SLASH>;)
-
-// azerty
-ZMK_CAPS_WORD(cword_az, continue-list = <Q W E R T Y U I O P A S D F G H J K L SEMI Z X C V B N>;)
+/ {
+  behaviors {
+    cword: cword_ergol {
+      compatible = "zmk,behavior-locale-caps-word";
+      #binding-cells = <0>;
+      continue-list = <UNDERSCORE BACKSPACE DELETE O>;
+      allowed = <Q W E R T Y U I P A S D F G H J K L SEMI Z X V B M COMMA SLASH>;
+    };
+    cword_az: cword_azerty {
+      compatible = "zmk,behavior-locale-caps-word";
+      #binding-cells = <0>;
+      continue-list = <UNDERSCORE BACKSPACE DELETE>;
+      allowed = <Q W E R T Y U I O P A S D F G H J K L SEMI Z X C V B N N0 N1 N2 N3 N4 N5 N6 N7 N8 N9>;
+    };
+  };
+};

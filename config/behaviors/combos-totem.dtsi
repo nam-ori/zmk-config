@@ -1,4 +1,4 @@
-// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/combos_36.dtsi
+#include "zmk-helpers/key-labels/totem.h"
 #include "./combos.dtsi"
 
 // NOTE: Only combos with the 6th column here (spec. to Totem)

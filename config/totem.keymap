@@ -9,50 +9,41 @@
 //                                                                      ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-       
+
 
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#include "zmk-helpers/helper.h"
-#include "zmk-helpers/key-labels/totem.h"
-
-// https://github.com/urob/zmk-config/tree/main#timeless-homerow-mods
-#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                          // thumbs
-
-// Modifier keys
-#define GL LGUI
-#define CL LCTRL
-#define AL LALT
-#define SL LSHFT
-#define GR RGUI
-#define CR RCTRL
-#define AR RALT
-#define SR RSHFT
+// Modifier keys - shortcuts for the layers bindings
+#define   GL  LGUI
+#define   CL  LCTRL
+#define   AL  LALT
+#define   SL  LSHFT
+#define   GR  RGUI
+#define   CR  RCTRL
+#define   AR  RALT
+#define   SR  RSHFT
 
 // Layers
-// Must match order in which they are defined
-#define ERL 0
-#define ERG 1
-#define NUM 2
-#define NUA 3
-#define SYM 4
-#define FCT 5
-#define EAC 6
-#define GAM 7
+#define   ERL   0
+#define   ERG   1
+#define   NUM   2
+#define   NUA   3
+#define   SYM   4
+#define   FCT   5
+#define   EAC   6
+#define   GAM   7
 
 // Keys
-#define ___ &trans
-#define BACK_EAC &to ERG
-#define PBREAK PAUSE_BREAK
+#define   ___       &trans
+#define   BACK_EAC  &to ERG
+#define   PBREAK    PAUSE_BREAK
 
 #include "layouts/azerty-fr-modern.dtsi"
 #include "layouts/ergol.dtsi"
-#include "behaviors/leader-key.dtsi"
+#include "behaviors/one-dead-key.dtsi"
 #include "behaviors/capsword.dtsi"
 #include "behaviors/macros.dtsi"
 #include "behaviors/mod-morph.dtsi"
@@ -60,77 +51,64 @@
 #include "behaviors/combos-totem.dtsi"
 #include "behaviors/conditional-layers.dtsi"
 
-&sk {
-    quick-release;
-};
-
-#ifndef TAPPING_TERM
-#define TAPPING_TERM 300
-#endif
-
 / {
-  behaviors {
-    // like ZMK's sticky key (sk) but with a more robust timing
-    osm: one_shot_modifier {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <0>;
-      wait-ms = <0>;
-      bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
-    };
-    bsk: better_sticky_key {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&osm>;
-    };
-  };
-};
-
-// Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
-// Best with Ergo-L because NavNum accessed from here is maped for Ergo-L
-// ERL
-ZMK_LAYER(ErgolBase,
+  keymap {
+    compatible = "zmk,keymap";
+    
+    // Computer-managed layer - QWERTY-based sent keys, adapted per activated layout on OS
+    // Best with Ergo-L because NavNum accessed from here is maped for Ergo-L
+    ErgolBase {
+      display-name = "ERL";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U         &kp I         &odk_kp O    &kp P
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &hml SL A   &hml GL S   &hml CL D   &hml AL F    &kp G          &kp  H      &hmr AL J     &hmr CR K     &hmr GR L    &hmr SR SEMI
+                 &hrm SL A   &hrm GL S   &hrm CL D   &hrm AL F    &kp G          &kp  H      &hrm AL J     &hrm CR K     &hrm GR L    &hrm SR SEMI
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      &kp CL      &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N       &kp M         &kp COMMA     &kp PERIOD   &kp SLASH    &kp AL
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                        &lt FCT ESC &bsk SL SL &lt NUM RET   &lt NUM BSPC &mt AR SPACE  &mt AR TAB
+                                        &lt FCT ESC  &bsk SL SL   &lt NUM RET   &lt NUM BSPC &mt AR SPACE  &mt AR TAB
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// ERG
-ZMK_LAYER(ErgolAz,
+    // AZERTY-based sent keys, Ergo-L emulated
+    ErgolAz {
+      display-name = "ERG";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp FR_M      &kp D         &eac_exl     &kp Y
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                &hml SL FR_A &hml GL S   &hml CL E   &hml AL N    &kp F          &kp L       &hmr AL R     &hmr CR T     &hmr GR I    &hmr SR U
+                &hrm SL FR_A &hrm GL S   &hrm CL E   &hrm AL N    &kp F          &kp L       &hrm AL R     &hrm CR T     &hrm GR I    &hrm SR U
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___         &lt NUM BSPC &n_space_lt SYM 0 ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// NUM
-ZMK_LAYER(NavNumBase,
+    // Ergo-L-based sent keys
+    NavNumBase {
+      display-name = "NUM";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp TAB     &kp HOME    &kp UP      &kp END      &kp PG_UP     &multi_dive  &kp N7        &kp N8        &kp N9       &comma_dote
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-              &hml SL CAPS &hml GL LEFT &hml CL DOWN &hml AL RIGHT &kp PG_DN    &plus_minuse &hmr AL N4    &hmr CR N5    &hmr GR N6 &hrm_decim_e SR 0
+              &hrm SL CAPS &hrm GL LEFT &hrm CL DOWN &hrm AL RIGHT &kp PG_DN    &plus_minuse &hrm AL N4    &hrm CR N5    &hrm GR N6 &hrm_decim_e SR 0
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &kp SLCK    &kp PBREAK  &kp INS     &kp DEL      &kp K_APP      &kp N0      &kp N1        &kp N2        &kp N3       &equal_e     ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___            &kp BSPC    ___           ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// NUA
-ZMK_LAYER(NavNumAz,
+    // AZERTY-based sent keys, Ergo-L emulated
+    // must be activated with NUM under it (done with conditional_layers)
+    NavNumAz {
+      display-name = "NUA";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  ___         ___         ___         ___          ___           &multi_diva  &d7           &d8           &d9          &comma_dota
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
@@ -140,36 +118,46 @@ ZMK_LAYER(NavNumAz,
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___            ___      &n_space_mt AR 0 ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// SYM
-ZMK_LAYER(Symbols,
+    // AZERTY-based sent keys, Ergo-L emulated
+    // AltGr emulation
+    Symbols {
+      display-name = "SYM";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &circacc    &lessert    &greatert   &dollars     &perct         &arobase    &kp ESPR      &starmul      &squotecute  &graveacc
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-         &hmllbrace SL 0 &hml AL LPAREN &hml GL RPAREN &hmlrbrace CL 0 &equaldif &bslashobl &hmrplus CR 0 &hmrhyphen GR 0 &hmrslash AL 0 &hmrdquote SR 0
+         &hrmlbrace SL 0 &hrm AL LPAREN &hrm GL RPAREN &hrmrbrace CL 0 &equaldif &bslashobl &hrmplus CR 0 &hrmhyphen GR 0 &hrmslash AL 0 &hrmdquote SR 0
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      ___         &tildes     &lbracketc  &rbracketo  &underscruh  &kp SHARP      &kp VPIP    &kp EXCLM     &semicolced   &coloneach   &questionm   ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___            ___         &nbspac       ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// FCT
-ZMK_LAYER(Function,
+    Funct {
+      display-name = "FCT";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                 &kp LA(F4) &bt BT_SEL 3 &bt BT_SEL 2 &kp C_NEXT  &kp C_VOL_UP   &kp C_BRI_UP &kp F1        &kp F2        &kp F3       &kp F4
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
                 &out OUT_TOG &bt BT_NXT &bt BT_SEL 1 &kp C_PREV  &kp C_VOL_DN   &kp C_BRI_DN &kp F5        &kp F6        &kp F7       &kp F8
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___      &bt BT_CLR_ALL &bt BT_CLR &bt BT_SEL 0 &kp C_PP     &kp C_MUTE    &kp PSCRN    &kp F9        &kp F10       &kp F11      &kp F12      ___
+     ___      &bt BT_CLR_ALL &bt BT_CLR &bt BT_SEL 0 &kp C_PP     &kp C_MUTE     &kp PSCRN   &kp F9        &kp F10       &kp F11      &kp F12      ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         ___         ___          ___           &del_mt AL 0 &kp SPACE     ___
+                                         ___         ___          ___            &mt AL BSPC &kp SPACE     ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// EAC
-ZMK_LAYER(ErgAzAcc,
+    // AZERTY-based sent keys, Ergo-L emulated
+    // One-Dead-Key emulation
+    ErgAzAcc {
+      display-name = "EAC";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &ACI       &kp C_CEDIL  &kp FR_OE   &OCI         BACK_EAC       BACK_EAC    &kp MATH_MIC  &kp UNDSC     &trem_gr     &UCI
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
@@ -179,10 +167,12 @@ ZMK_LAYER(ErgAzAcc,
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          BACK_EAC    ___          BACK_EAC       BACK_EAC    &kp APO       ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
 
-// GAM
-ZMK_LAYER(Game,
+    Game {
+      display-name = "GAM";
+      bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
                  &kp TAB     &kp Q       &kp W       &kp E        &kp R          &kp PBREAK  &kp PSCRN    &kp F5        &kp F6       &kp F7
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
@@ -192,4 +182,8 @@ ZMK_LAYER(Game,
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          &kp ESC     &kp SPACE    &kp RET        &kp BSPC    &kp FR_M      &kp L
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
-)
+      >;
+    };
+    
+  };
+};

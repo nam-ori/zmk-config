@@ -1,195 +1,175 @@
-// Adapted from https://github.com/JeffDess/zmk-config/blob/main/behaviors/hold_tap.dtsi
-#define std_tap_term 200
-#define quick_tap 200
-#define long_tap_term 300
-#define hrm_prior_idle 100
+#define BALANCED_TAP_TERM 225
+#define QUICK_TAP 225
+#define LONG_TAP_TERM 300
 
+
+#define SETTINGS_HOLD_TAP_THUMBS                            \
+      compatible = "zmk,behavior-hold-tap";                 \
+      #binding-cells = <2>;                                 \
+      flavor = "balanced";                                  \
+      tapping-term-ms = <BALANCED_TAP_TERM>;                \
+      quick-tap-ms = <QUICK_TAP>
+
+#define SETTINGS_HOLD_TAP_HRM                               \
+      compatible = "zmk,behavior-hold-tap";                 \
+      #binding-cells = <2>;                                 \
+      flavor = "tap-preferred";                             \
+      tapping-term-ms = <LONG_TAP_TERM>;                    \
+      quick-tap-ms = <QUICK_TAP>
+
+      
 &mt {
-  tapping-term-ms = <long_tap_term>;
-  quick-tap-ms = <quick_tap>;
+  flavor = "balanced";
+  tapping-term-ms = <BALANCED_TAP_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
 };
 
 &lt{
-  tapping-term-ms = <std_tap_term>;
-  quick-tap-ms = <quick_tap>;
+  flavor = "balanced";
+  tapping-term-ms = <BALANCED_TAP_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
 };
 
-// space or narrow no-break space and layer if hold
-ZMK_HOLD_TAP(n_space_lt,
-    flavor = "balanced";
-    quick-tap-ms = <quick_tap>;
-    tapping-term-ms = <long_tap_term>;
-    bindings = <&mo>, <&nnbspac>;
-)
-
-// space or narrow no-break space and key press if hold
-ZMK_HOLD_TAP(n_space_mt,
-    flavor = "balanced";
-    quick-tap-ms = <quick_tap>;
-    tapping-term-ms = <long_tap_term>;
-    bindings = <&kp>, <&nnbspac>;
-)
-
-//  backspace or del and layer if hold
-ZMK_HOLD_TAP(del_lt,
-    flavor = "balanced";
-    quick-tap-ms = <quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&mo>, <&bspc_del>;
-)
-
-//  backspace or del and key press if hold
-ZMK_HOLD_TAP(del_mt,
-    flavor = "balanced";
-    quick-tap-ms = <quick_tap>;
-    tapping-term-ms = <std_tap_term>;
-    bindings = <&kp>, <&bspc_del>;
-)
-
-ZMK_HOLD_TAP(sticky,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    bindings = <&kp>, <&sk>;
-    hold-while-undecided-linger;
-)
+&sk {
+    quick-release;
+};
 
 
-/* Timerless Home Row Mods */
-/* https://github.com/urob/zmk-config#timeless-homerow-mods */
-
-/* left-hand HRMs */
-ZMK_HOLD_TAP(hml,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&kp>;
-//    hold-trigger-key-positions = <KEYS_R THUMBS>;
-//    hold-trigger-on-release;
-)
-
-/* right-hand HRMs */
-ZMK_HOLD_TAP(hmr,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&kp>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-// baserow mods for 0 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_decim_e,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&decim_sepe>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-// baserow mods for 0 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_decim_a,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&decim_sepa>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-// baserow mods for 4 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d4,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&d4>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-// baserow mods for 5 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d5,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&d5>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-// baserow mods for 6 (Ergo-L on Azerty)
-ZMK_HOLD_TAP(hrm_d6,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&d6>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmllbrace,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&lbracecar>;
-//    hold-trigger-key-positions = <KEYS_R THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmlrbrace,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&rbraceupoin>;
-//    hold-trigger-key-positions = <KEYS_R THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmrplus,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&plusplusm>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmrhyphen,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&hyphenminm>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmrslash,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&slashdiv>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
-
-ZMK_HOLD_TAP(hmrdquote,
-    flavor = "tap-preferred";
-    tapping-term-ms = <long_tap_term>;
-    quick-tap-ms = <quick_tap>;
-    require-prior-idle-ms = <hrm_prior_idle>;
-    bindings = <&kp>, <&dquotecute>;
-//    hold-trigger-key-positions = <KEYS_L THUMBS>;
-//    hold-trigger-on-release;
-)
+/ {
+  behaviors {
+      
+    /* 
+     * 
+     * Sticky key from Selenium project - Nuclear-Squid's repos
+     * https://github.com/Nuclear-Squid/zmk-keyboard-quacken/blob/main/keymaps/hold_taps.dtsi
+     * 
+     */
+    
+    // like ZMK's sticky key (sk) but with a more robust timing
+    osm: one_shot_modifier {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+    };
+    bsk: better_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <LONG_TAP_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&osm>;     
+      // hold-while-undecided added to the Selenium def
+      hold-while-undecided;
+    };
+    
+    /* 
+     * 
+     * Hold-taps for thumbs
+     * 
+     */
+    
+    // HRM for right thumb, center - Base layer emulated Ergo-L on Azerty
+    n_space_lt: narrow_space_layer_tap {
+      SETTINGS_HOLD_TAP_THUMBS;
+      bindings =                            <&mo>,          <&nnbspac>      ;
+    };
+    
+    // HRM for right thumb, center - NUM layer emulated Ergo-L on Azerty
+    n_space_mt: narrow_space_mod_tap {
+      SETTINGS_HOLD_TAP_THUMBS;
+      bindings =                            <&kp>,          <&nnbspac>      ;
+    };
+    
+    /* 
+     * 
+     * HRMs 
+     * 
+     */
+    
+    // Standard HRM (only with &kp, so not with mod-morph)
+    hrm: standard_home_row_mod {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&kp>           ;
+    };
+    
+    /* 
+     * 
+     * NUM layer HRMs 
+     * 
+     */
+    
+    // HRM for right index - NUM layer emulated Ergo-L on Azerty
+    hrm_d4: nua_home_row_mod_d4 {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&d4>           ;
+    };
+    
+    // HRM for right middle - NUM layer emulated Ergo-L on Azerty
+    hrm_d5: nua_home_row_mod_d5 {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&d5>           ;
+    };
+    
+    // HRM for right ring - NUM layer emulated Ergo-L on Azerty
+    hrm_d6: nua_home_row_mod_d6 {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&d6>           ;
+    };
+    
+    // HRM for right pinky - NUM layer emulated Ergo-L on Azerty
+    hrm_decim_a: nua_home_row_mod_decim {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&decim_sepa>   ;
+    };
+    
+    // HRM for pinky - NUM layer direct Ergo-L
+    hrm_decim_e: num_home_row_mod_decim {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&decim_sepe>   ;
+    };
+    
+    /* 
+     * 
+     * SYM layer HRMs 
+     * 
+     */
+    
+    // HRM for left pinky - SYM layer emulated Ergo-L on Azerty
+    hrmlbrace: sym_home_row_mod_left_brace {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&lbracecar>    ;
+    };
+    
+    // HRM for left index - SYM layer emulated Ergo-L on Azerty
+    hrmrbrace: sym_home_row_mod_right_brace {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&rbraceupoin>  ;
+    };
+    
+    // HRM for right index - SYM layer emulated Ergo-L on Azerty
+    hrmplus: sym_home_row_mod_plus {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&plusplusm>    ;
+    };
+    
+    // HRM for right middle - SYM layer emulated Ergo-L on Azerty
+    hrmhyphen: sym_home_row_mod_hyphen {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&hyphenminm>   ;
+    };
+    
+    // HRM for right ring - SYM layer emulated Ergo-L on Azerty
+    hrmslash: sym_home_row_mod_slash {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&slashdiv>     ;
+    };
+    
+    // HRM for right pinky - SYM layer emulated Ergo-L on Azerty
+    hrmdquote: sym_home_row_mod_double_quote {
+      SETTINGS_HOLD_TAP_HRM;
+      bindings =                            <&kp>,          <&dquotecute>   ;
+    };
+    
+  };
+};
