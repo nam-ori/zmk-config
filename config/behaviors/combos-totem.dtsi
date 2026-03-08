@@ -12,8 +12,8 @@ ZMK_COMBO(altshift, &kp LA(LSHFT), LB5 LB4, ERL ERG NUM NUA SYM FCT EAC)
 ZMK_COMBO(qw2ergol, &tog ERG, LB5 LB4 LB3, ERL ERG NUM NUA SYM FCT EAC)
 
 // NUM Toggle - Both thumbs, active on all inferior layers
-ZMK_COMBO(num_toggle_r, &tog NUM, RB5 RH0, ERL ERG NUM)
-ZMK_COMBO(num_toggle_l, &tog NUM, LB5 LH0, ERL ERG NUM)
+ZMK_COMBO(num_toggle_r, &tog NUM, RB5 RH0, ERL ERG NUM NUA)
+ZMK_COMBO(num_toggle_l, &tog NUM, LB5 LH0, ERL ERG NUM NUA)
 
 // SYM Toggle - Right thumb, active on all Ergo-l-AZERTY inferior layers
 ZMK_COMBO(altgr_toggle, &kt AR, RB5 RH1, ERL NUM)
