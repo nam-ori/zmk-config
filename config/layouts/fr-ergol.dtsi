@@ -1,0 +1,15 @@
+// Adapted from https://github.com/JeffDess/zmk-config/blob/main/layouts/canadian-multilingual-standard.dtsi
+
+/* Mappings for Ergo-L
+ * Very partial: just for my NavNum layer config
+ */
+
+#define E_PLUS    LS(EQUAL)   // +
+#define E_MINUS   C           // -
+#define E_STAR    LS(N8)      // *
+#define E_FSLH    MINUS       // //
+#define E_PERIOD  N           // .
+#define E_COMMA   PERIOD      // ,
+#define E_SEMI    LS(PERIOD)  // ;
+#define E_EQUAL   EQUAL       // =
+#define E_EXCL    LS(O)       // !

@@ -1,0 +1,20 @@
+#pragma once
+
+#define GET_CHARACTER_KEY(layoutprefix, character) layoutprefix ## _KEY ## character
+#define GET_CHARACTER_KEY_UPPER(layoutprefix, character) layoutprefix ## _KEY ## character ## _UP
+
+#define GET_COMBINED_CHAR(layoutprefix, character) layoutprefix ## _COMBINED ## character
+#define GET_COMBINED_CHAR_UPPER(layoutprefix, character) layoutprefix ## _COMBINED ## character ## _UP
+
+#ifndef concat_
+  #define concat_(a, b) a ## b
+#endif
+
+#ifndef concat
+  #define concat(a, b) concat_(a, b)
+#endif
+
+#define OS      concat(OS_LAYOUT, _CHAR)
+#define OS_UP   concat(OS_LAYOUT, _CHAR_UPPER)
+#define OS_C    concat(OS_LAYOUT, _COMBINED)
+#define OS_C_UP concat(OS_LAYOUT, _COMBINED_UPPER)
