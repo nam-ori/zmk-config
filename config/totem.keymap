@@ -41,8 +41,9 @@
 #define   BACK_EAC  &to ERG
 #define   PBREAK    PAUSE_BREAK
 
-#include "layouts/azerty-fr-modern.dtsi"
-#include "layouts/ergol.dtsi"
+#include "layouts/fr-azerty-modern.dtsi"
+#include "layouts/fr-ergol.dtsi"
+
 #include "behaviors/one-dead-key.dtsi"
 #include "behaviors/capsword.dtsi"
 #include "behaviors/macros.dtsi"
@@ -72,16 +73,16 @@
       >;
     };
 
-    // AZERTY-based sent keys, Ergo-L emulated
+    // OS-based sent keys (AZERTY defined), Ergo-L emulated
     ErgolAz {
       display-name = "ERG";
       bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp FR_Q    &kp C       &kp O       &kp P        &kp FR_W       &kp J       &kp FR_M      &kp D         &eac_exl     &kp Y
+                 &kp OS(_Q)  &kp OS(_C) &kp OS(_O)  &kp OS(_P )   &kp OS(_W)     &kp OS(_J)  &kp OS(_M)    &kp OS(_D)    &eac_exl     &kp OS(_Y)
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                &hrm SL FR_A &hrm GL S   &hrm CL E   &hrm AL N    &kp F          &kp L       &hrm AL R     &hrm CR T     &hrm GR I    &hrm SR U
+        &hrm SL OS(_A) &hrm GL OS(_S) &hrm CL OS(_E) &hrm AL OS(_N) &kp OS(_F) &kp OS(_L) &hrm AL OS(_R) &hrm CR OS(_T) &hrm GR OS(_I) &hrm SR OS(_U)
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp FR_Z    &kp X       &min_qst    &kp V        &kp B          &dot_col    &kp H         &kp G         &comma_semi  &kp K        ___
+     ___         &kp OS(_Z)  &kp OS(_X)  &min_qst    &kp OS(_V)   &kp OS(_B)     &dot_col    &kp OS(_H)    &kp OS(_G)    &comma_semi  &kp OS(_K)   ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___         &lt NUM BSPC &n_space_lt SYM 0 ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
@@ -104,7 +105,7 @@
       >;
     };
 
-    // AZERTY-based sent keys, Ergo-L emulated
+    // OS-based sent keys (AZERTY defined), Ergo-L emulated
     // must be activated with NUM under it (done with conditional_layers)
     NavNumAz {
       display-name = "NUA";
@@ -121,17 +122,17 @@
       >;
     };
 
-    // AZERTY-based sent keys, Ergo-L emulated
+    // OS-based sent keys (AZERTY defined), Ergo-L emulated
     // AltGr emulation
     Symbols {
       display-name = "SYM";
       bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &circacc    &lessert    &greatert   &dollars     &perct         &arobase    &kp ESPR      &starmul      &squotecute  &graveacc
+                 &circacc    &lessert    &greatert   &dollars     &perct         &arobase   &kp OS(_AMPS)  &starmul      &squotecute  &graveacc
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-         &hrmlbrace SL 0 &hrm AL LPAREN &hrm GL RPAREN &hrmrbrace CL 0 &equaldif &bslashobl &hrmplus CR 0 &hrmhyphen GR 0 &hrmslash AL 0 &hrmdquote SR 0
+ &hrmlbrace SL 0 &hrm AL OS(_LPAR) &hrm GL OS(_RPAR) &hrmrbrace CL 0 &equaldif &bslashobl &hrmplus CR 0 &hrmhyphen GR 0 &hrmslash AL 0 &hrmdquote SR 0
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &tildes     &lbracketc  &rbracketo  &underscruh  &kp SHARP      &kp VPIP    &kp EXCLM     &semicolced   &coloneach   &questionm   ___
+     ___         &tildes     &lbracketc  &rbracketo  &underscruh &kp OS(_HASH) &kp OS(_PIPE) &kp OS(_EXCL) &semicolced   &coloneach   &questionm   ___
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
                                          ___         ___          ___            ___         &nbspac       ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
@@ -159,13 +160,13 @@
       display-name = "EAC";
       bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &ACI       &kp C_CEDIL  &kp FR_OE   &OCI         BACK_EAC       BACK_EAC    &kp MATH_MIC  &kp UNDSC     &trem_gr     &UCI
+                 &ACI        &CCE        &OE         &OCI         BACK_EAC       BACK_EAC    &micro      &kp OS(_UNDER)  &dia_gr      &UCI
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
-                 &AGR        &ECU        &EGR        &ECI         BACK_EAC       &kp LPAREN  &kp RPAREN    &ICI          &ITR         &kp U_AGRAV
+                 &AGR        &ECU        &EGR        &ECI         BACK_EAC    &kp OS(_LPAR) &kp OS(_RPAR)  &ICI          &IDI         &UGR
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
-     ___         &kp FR_AE   &kp S_SHARP &nob_hyph   &kp NDASH    &kp MDASH      &kp T_DOT   &kp M_DOT     &kp GREEK     &kp M_DOT    BACK_EAC     ___
+     ___       &AE &kp OS(_SHARP_S) &nob_hyph &kp OS(_EN_DASH) &kp OS(_EM_DASH) &kp OS(_ELLIPS) &mdot_bul &kp OS(_DK_GREEK) &mdot_bul BACK_EAC     ___
 // ╰───────────├───────────┴───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         BACK_EAC    ___          BACK_EAC       BACK_EAC    &kp APO       ___
+                                         BACK_EAC    ___          BACK_EAC       BACK_EAC   &kp OS(_R_SQT)  ___
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
       >;
     };
@@ -180,7 +181,7 @@
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
      &kp T       &kp CL      &kp Z       &kp X       &kp C        &kp V          &kp N6      &kp N7        &kp N8        &kp N9       &kp N0       &kp AL
 // ╰───────────┴───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┴────────────┴────────────╯
-                                         &kp ESC     &kp SPACE    &kp RET        &kp BSPC    &kp FR_M      &kp L
+                                         &kp ESC     &kp SPACE    &kp RET        &kp BSPC    &kp OS(_M)    &kp L
 //                                     ╰───────────┴────────────┴────────────╯ ╰───────────┴─────────────┴─────────────╯
       >;
     };

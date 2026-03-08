@@ -18,242 +18,77 @@
 
 / {
   behaviors {
-      
     /* 
      * 
-     * Ergo-L accent layer emulation on AZERTY
+     * ErgolAz / ERG layer
      * 
      */
-     
-    // MOD-MORPH - lowercase / uppercase accented characters
-    //                          default action          modded action
-    ACI: mod_morph_A_circ {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_ci FR_A>,         <&acc_ci LS(FR_A)>;     // â / Â
-    };
-    ETR: mod_morph_E_trema {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_tr E>,            <&acc_tr LS(E)>;        // ë / Ë
-    };
-    ICI: mod_morph_I_circ {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_ci I>,            <&acc_ci LS(I)>;        // î / Î
-    };
-    ITR: mod_morph_I_trema {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_tr I>,            <&acc_tr LS(I)>;        // ï / Ï
-    };
-    OCI: mod_morph_O_circ {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_ci O>,            <&acc_ci LS(O)>;        // ô / Ô
-    };
-    OTR: mod_morph_O_trema {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_tr O>,            <&acc_tr LS(O)>;        // ö / Ö
-    };
-    UCI: mod_morph_U_circ {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_ci U>,            <&acc_ci LS(U)>;        // û / Û
-    };
-    UTR: mod_morph_U_trema {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&acc_tr U>,            <&acc_tr LS(U)>;        // ü / Ü
-    };
-    
-    // Accents with a alt+shift needed for uppercase
-    //                         modmorph_name   default action  modded action
-    ECU: mod_morph_E_cute {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_ACUTE>,          <&kp LS(RA(E_ACUTE))>;  // é / É
-    };
-    EGR: mod_morph_E_grave {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_AGRAV>,          <&kp LS(RA(E_AGRAV))>;  // è / È
-    };
-    ECI: mod_morph_E_circ {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_CIRC>,           <&kp LS(RA(E_CIRC))>;   // ê / Ê
-    };
-    AGR: mod_morph_A_grave {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp A_AGRAV>,          <&kp LS(RA(A_AGRAV))>;  // à / À
-    };
-
-
-
-
-    ////////////////////////
-    // Characters mod morphs
-    ////////////////////////
-
     // tap: to EAC | shift + tap: exclamation mark
     eac_exl: mod_morph_ergol_odk_exclamation_mark {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&sl EAC>,              <&kp EXCLM>;
+      bindings =                <&sl EAC>,              <&kp OS(_EXCL)>;
     };
     // tap: minus | shift + tap: question mark
     min_qst: mod_morph_min_qst {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp HYPMIN>,           <&kp QUEST>;
+      bindings =                <&kp OS(_MINUS)>,           <&kp OS(_QMARK)>;
     };
     // tap: period | shift + tap: colon
     dot_col: mod_morph_dot_col {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp PERD>,             <&kp CLN>;
+      bindings =                <&kp OS(_PERIOD)>,          <&kp OS(_COLON)>;
     };
     // tap: comma | shift + tap: semi-colon
     comma_semi: mod_morph_comma_semicol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp COMM>,             <&kp SEMIC>;
-    };
-    // tap: trema | shift + tap: grave
-    trem_gr: mod_morph_trema_grave {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp CD_TREMA>,         <&kp CD_ACC_GR>;
-    };
-    // tap: no-break hyphen | shift + tap: inverted question mark
-    nob_hyph: mod_morph_nob_hyph {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp NOB_HYP>,          <&kp INV_QUEST>;
-    };
-    // space mod-morphs
-    nbspac: mod_morph_nb_spac {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp SPACE>,            <&kp NBSPC>;
+      bindings =                <&kp OS(_COMMA)>,           <&kp OS(_SEMI)>;
     };
     nnbspac: mod_morph_narrow_nb_spac {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp SPACE>,            <&kp NNBSPC>;
+      bindings =                <&kp OS(_SPACE)>,           <&kp OS(_NAR_SPACE)>;
     };
-    // Alt+KeyQ - tap: circ | shift + tap: dead circ
-    circacc: mod_morph_circacc {
+    /* 
+     * 
+     * NavNumBase / NUM layer
+     * 
+     */
+    // same last 5 for Ergo-L computer layer
+    // tap: plus | shift + tap: minus
+    plus_minuse: mod_morph_plus_minus_ergol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&alive CD_ACC_CI>,     <&kp CD_ACC_CI>;
+      bindings =                <&kp E_PLUS>,            <&kp E_MINUS>;
     };
-    // Alt+KeyW - tap: lt | shit + tap: let
-    lessert: mod_morph_lessert {
+    // tap: multiply | shift + tap: divide
+    multi_dive: mod_morph_multi_div_ergol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp LTH>,              <&kp LETH>;
+      bindings =                <&kp E_STAR>,            <&kp E_FSLH>;
     };
-    // Alt+KeyE - tap: gth | shit + tap: geth
-    greatert: mod_morph_greatert {
+    // tap: comma | shift + tap: dot (period)
+    comma_dote: mod_morph_comma_dot_ergol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp GTH>,              <&kp GETH>;
+      bindings =                <&kp E_PERIOD>,          <&kp E_COMMA>;
     };
-    // Alt+KeyR - tap: dollar | shift + tap: monetary symbols
-    dollars: mod_morph_dollars {
+    // tap: decim sep | shift + tap: semicolon
+    decim_sepe: mod_morph_decim_sep_ergol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp DOLL>,             <&kp MONET>;
+      bindings =                <&kp E_COMMA>,           <&kp E_SEMI>;
     };
-    // Alt+KeyT - tap: percent | shift + tap: per thousand
-    perct: mod_morph_percent_perthousand {
+    equal_e: mod_morph_equal_ergol {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp PERC>,             <&kp PERT>;
+      bindings =                <&kp E_EQUAL>,           <&kp E_EXCL>;
     };
-    // Alt+KeyY - tap: arobase | shift + tap: rond
-    arobase: mod_morph_arobase {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp AROB>,             <&kp CD_RON>;
-    };
-    // Alt+KeyI - tap: star | shift + tap: multiply (math)
-    starmul: mod_morph_star_multiply {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp STR>,              <&kp MATH_MUL>;
-    };
-    // Alt+KeyO - tap: single quote | shift + tap: cute accent
-    squotecute: mod_morph_singlequote_cute {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp SQUO>,             <&kp CD_ACC_CU>;
-    };
-    // Alt+KeyP - tap: grave | shift + tap: dead grave
-    graveacc: mod_morph_graveacc {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&alive CD_ACC_GR>,     <&kp CD_ACC_GR>;
-    };
-    // Alt+KeyA - tap: left brace | shift + tap: caron
-    lbracecar: mod_morph_leftbrace_caron {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp LBRAC>,            <&kp CD_CAR>;
-    };
-    // Alt+KeyF - tap: right brace | shift + tap: upper point
-    rbraceupoin: point {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp RBRAC>,            <&kp CD_UPO>;
-    };
-    // Alt+KeyG - tap: equal | shift + tap: different
-    equaldif: mod_morph_equal_different {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp EQUA>,             <&kp MATH_DIF>;
-    };
-    // Alt+KeyH - tap: backslash | shift + tap: oblique
-    bslashobl: mod_morph_backslash_oblique {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp BSLSH>,            <&kp CD_OBL>;
-    };
-    // Alt+KeyJ - tap: plus | shift + tap: plus/minus
-    plusplusm: mod_morph_plus_plusminus {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp RBKT>,             <&kp MATH_PM>;
-    };
-    // Alt+KeyK - tap: minus | shift + tap: macron
-    hyphenminm: mod_morph_hyphen_macron {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp HYPMIN>,           <&kp MATH_MIN>;
-    };
-    // Alt+KeyL - tap: slash | shift + tap: division
-    slashdiv: mod_morph_slash_division {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp SLSH>,             <&kp MATH_DIV>;
-    };
-    // Alt+Semicolon - tap: double quote | shift + tap: double cute
-    dquotecute: mod_morph_doublequote_doublecute {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp DQUO>,             <&kp CD_ACC_DCU>;
-    };
-    // Alt+KeyZ - tap: tilde | shift + tap: dead tilde
-    tildes: mod_morph_tildes {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&alive CD_TILD>,       <&kp CD_TILD>;
-    };
-    // Alt+KeyX - tap: left bracket | shift + tap: dead comma
-    lbracketc: mod_morph_leftbracket_deadcomma {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp LBKET>,            <&kp CD_COM>;
-    };
-    // Alt+KeyC - tap: right bracket | shift + tap: ogonek
-    rbracketo: mod_morph_rightbracket_ogonek {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp RBKET>,            <&kp CD_OGO>;
-    };
-    // Alt+KeyV - tap: underscore | shift + tap: no-break hyphen
-    underscruh: mod_morph_underscore_nobreakhyphen {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp UNDSC>,            <&kp NOB_HYP>;
-    };
-    // Alt+Comma - tap: semicolon | shift + tap: cedille
-    semicolced: mod_morph_semicol_cedille {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp SEMIC>,            <&kp CD_CED>;
-    };
-    // Alt+Period - tap: colon | shift + tap: colon 
-    // same char each so it can be tapped with spaces before/after
-    coloneach: mod_morph_colon_colon {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp CLN>,              <&kp CLN>;
-    };
-    // Alt+Slash - tap: question mark | shift + tap: breve
-    questionm: mod_morph_questionmark_breve {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp QUEST>,            <&kp CD_BRE>;
-    };
-    // Digits - AltGr
+    /* 
+     * 
+     * NavNumAz / NUA layer
+     * 
+     */    // Digits - AltGr
     d1_noalt: mod_morph_d1_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_1>,             <&kp EURO>;
+      bindings =                <&kp OS(_N1)>,          <&kp OS(_EURO)>;
     };
     d1_alt: mod_morph_d1_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_1>,        <&num_exp FR_1>;
+      bindings =                <OS_C(_INDEX_1)>,       <OS_C(_EXPON_1)>;
     };
     d1: mod_morph_d1 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -261,11 +96,11 @@
     };
     d2_noalt: mod_morph_d2_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_2>,             <&kp LFQUO>;
+      bindings =                <&kp OS(_N2)>,          <&kp OS(_L_ANG_DQT)>;
     };
     d2_alt: mod_morph_d2_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_2>,        <&num_exp FR_2>;
+      bindings =                <OS_C(_INDEX_2)>,       <OS_C(_EXPON_2)>;
     };
     d2: mod_morph_d2 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -273,11 +108,11 @@
     };
     d3_noalt: mod_morph_d3_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_3>,             <&kp RFQUO>;
+      bindings =                <&kp OS(_N3)>,          <&kp OS(_R_ANG_DQT)>;
     };
     d3_alt: mod_morph_d3_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_3>,        <&num_exp FR_3>;
+      bindings =                <OS_C(_INDEX_3)>,       <OS_C(_EXPON_3)>;
     };
     d3: mod_morph_d3 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -285,11 +120,11 @@
     };
     d4_noalt: mod_morph_d4_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_4>,             <&kp DOLL>;
+      bindings =                <&kp OS(_N4)>,          <&kp OS(_DLLR)>;
     };
     d4_alt: mod_morph_d4_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_4>,        <&num_exp FR_4>;
+      bindings =                <OS_C(_INDEX_4)>,       <OS_C(_EXPON_4)>;
     };
     d4: mod_morph_d4 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -297,11 +132,11 @@
     };
     d5_noalt: mod_morph_d5_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_5>,             <&kp PERC>;
+      bindings =                <&kp OS(_N5)>,          <&kp OS(_PRCNT)>;
     };
     d5_alt: mod_morph_d5_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_5>,        <&num_exp FR_5>;
+      bindings =                <OS_C(_INDEX_5)>,       <OS_C(_EXPON_5)>;
     };
     d5: mod_morph_d5 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -309,11 +144,11 @@
     };
     d6_noalt: mod_morph_d6_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_6>,             <&alive CD_ACC_CI>;
+      bindings =                <&kp OS(_N6)>,          <OS_C(_CARET)>;
     };
     d6_alt: mod_morph_d6_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_6>,        <&num_exp FR_6>;
+      bindings =                <OS_C(_INDEX_6)>,       <OS_C(_EXPON_6)>;
     };
     d6: mod_morph_d6 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -321,11 +156,11 @@
     };
     d7_noalt: mod_morph_d7_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_7>,             <&kp ESPR>;
+      bindings =                <&kp OS(_N7)>,          <&kp OS(_AMPS)>;
     };
     d7_alt: mod_morph_d7_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_7>,        <&num_exp FR_7>;
+      bindings =                <OS_C(_INDEX_7)>,       <OS_C(_EXPON_7)>;
     };
     d7: mod_morph_d7 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -333,11 +168,11 @@
     };
     d8_noalt: mod_morph_d8_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_8>,             <&kp STR>;
+      bindings =                <&kp OS(_N8)>,          <&kp OS(_STAR)>;
     };
     d8_alt: mod_morph_d8_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_8>,        <&num_exp FR_8>;
+      bindings =                <OS_C(_INDEX_8)>,       <OS_C(_EXPON_8)>;
     };
     d8: mod_morph_d8 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -345,11 +180,11 @@
     };
     d9_noalt: mod_morph_d9_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_9>,             <&kp SHARP>;
+      bindings =                <&kp OS(_N9)>,          <&kp OS(_HASH)>;
     };
     d9_alt: mod_morph_d9_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_9>,        <&num_exp FR_9>;
+      bindings =                <OS_C(_INDEX_9)>,       <OS_C(_EXPON_9)>;
     };
     d9: mod_morph_d9 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -357,11 +192,11 @@
     };
     d0_noalt: mod_morph_d0_noalt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FR_0>,             <&kp AROB>;
+      bindings =                <&kp OS(_N0)>,          <&kp OS(_AT)>;
     };
     d0_alt: mod_morph_d0_alt {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&num_ind FR_0>,        <&num_exp FR_0>;
+      bindings =                <OS_C(_INDEX_0)>,       <OS_C(_EXPON_0)>;
     };
     d0: mod_morph_d0 {
       SETTINGS_MOD_MORPH_ALTGR;
@@ -370,52 +205,230 @@
     // tap: plus | shift + tap: minus
     plus_minusa: mod_morph_plus_minus_azerty {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp FPLUS>,            <&kp HYPMIN>;
+      bindings =                <&kp OS(_PLUS)>,       <&kp OS(_MINUS)>;
     };
     // tap: multiply | shift + tap: divide
     multi_diva: mod_morph_multi_div_azerty {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp STR>,              <&kp SLSH>;
+      bindings =                <&kp OS(_STAR)>,       <&kp OS(_FSLH)>;
     };
     // tap: comma | shift + tap: dot (period)
     comma_dota: mod_morph_comma_dot_azerty {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp COMM>,             <&kp PERD>;
-    };
-    // tap: equal | shift + tap: slash (difference symbols)
-    equal_a: mod_morph_equal_azerty {
-      SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp EQUA>,             <&kp CD_OBL>;
+      bindings =                <&kp OS(_PERIOD)>,      <&kp OS(_COMMA)>;
     };
     decim_sepa: mod_morph_decim_sep_azerty {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp KP_DOT>,           <&kp SEMIC>;
+      bindings =                <&kp OS(_COMMA)>,       <&kp OS(_SEMI)>;
     };
-    // same last 5 for Ergo-L computer layer
-    // tap: plus | shift + tap: minus
-    plus_minuse: mod_morph_plus_minus_ergol {
+    // tap: equal | shift + tap: exclamation
+    equal_a: mod_morph_equal_azerty {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_FPLUS>,          <&kp E_HYPMIN>;
+      bindings =                <&kp OS(_EQUAL)>,       <&kp OS(_EXCL)>;
     };
-    // tap: multiply | shift + tap: divide
-    multi_dive: mod_morph_multi_div_ergol {
+    /* 
+     * 
+     * Symbols / SYM layer
+     * 
+     */
+    // Alt+KeyQ - tap: circ | shift + tap: dead circ
+    circacc: mod_morph_circacc {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_STR>,            <&kp E_SLSH>;
+      bindings =                <OS_C(_CARET)>,         <&kp OS(_CD_CIRCU)>;
     };
-    // tap: comma | shift + tap: dot (period)
-    comma_dote: mod_morph_comma_dot_ergol {
+    // Alt+KeyW - tap: lt | shit + tap: let
+    lessert: mod_morph_lessert {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_COMM>,           <&kp E_PERD>;
+      bindings =                <&kp OS(_LT)>,          <&kp OS(_LET)>;
     };
-    equal_e: mod_morph_equal_ergol {
+    // Alt+KeyE - tap: gth | shit + tap: geth
+    greatert: mod_morph_greatert {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp E_EQUA>,           <&kp E_CD_OBL>;
+      bindings =                <&kp OS(_GT)>,          <&kp OS(_GET)>;
     };
-    // tap: decim sep | shift + tap: semicolon
-    decim_sepe: mod_morph_decim_sep_ergol {
+    // Alt+KeyR - tap: dollar | shift + tap: monetary symbols
+    dollars: mod_morph_dollars {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp KP_DOT>,           <&kp E_SEMI>;
+      bindings =                <&kp OS(_DLLR)>,        <&kp OS(_DK_CURRENCY)>;
     };
-     
+    // Alt+KeyT - tap: percent | shift + tap: per thousand
+    perct: mod_morph_percent_perthousand {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_PRCNT)>,       <&kp OS(_PRMIL)>;
+    };
+    // Alt+KeyY - tap: arobase | shift + tap: rond
+    arobase: mod_morph_arobase {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_AT)>,          <&kp OS(_CD_RING)>;
+    };
+    // Alt+KeyI - tap: star | shift + tap: multiply (math)
+    starmul: mod_morph_star_multiply {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_STAR)>,        <&kp OS(_MULTIPL)>;
+    };
+    // Alt+KeyO - tap: single quote | shift + tap: cute accent
+    squotecute: mod_morph_singlequote_cute {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_SQT)>,         <&kp OS(_CD_ACUTE)>;
+    };
+    // Alt+KeyP - tap: grave | shift + tap: dead grave
+    graveacc: mod_morph_graveacc {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_GRAVE)>,         <&kp OS(_CD_GRAVE)>;
+    };
+    // Alt+KeyA - tap: left brace | shift + tap: caron
+    lbracecar: mod_morph_leftbrace_caron {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_LBRC)>,        <&kp OS(_CD_CARON)>;
+    };
+    // Alt+KeyF - tap: right brace | shift + tap: upper point
+    rbraceupoin: point {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_RBRC)>,        <&kp OS(_CD_DOT_ABO)>;
+    };
+    // Alt+KeyG - tap: equal | shift + tap: different
+    equaldif: mod_morph_equal_different {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_EQUAL)>,       <&kp OS(_MATH_DIF)>;
+    };
+    // Alt+KeyH - tap: backslash | shift + tap: oblique
+    bslashobl: mod_morph_backslash_oblique {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_BSLH)>,        <&kp OS(_CD_SOLID)>;
+    };
+    // Alt+KeyJ - tap: plus | shift + tap: plus/minus
+    plusplusm: mod_morph_plus_plusminus {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_RBKT)>,        <&kp OS(_MATH_PM)>;
+    };
+    // Alt+KeyK - tap: minus | shift + tap: macron
+    hyphenminm: mod_morph_hyphen_macron {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_MINUS)>,       <&kp OS(_MATH_MINUS)>;
+    };
+    // Alt+KeyL - tap: slash | shift + tap: division
+    slashdiv: mod_morph_slash_division {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_FSLH)>,        <&kp OS(_MATH_DIV)>;
+    };
+    // Alt+Semicolon - tap: double quote | shift + tap: double cute
+    dquotecute: mod_morph_doublequote_doublecute {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_DQT)>,         <&kp OS(_CD_D_ACUTE)>;
+    };
+    // Alt+KeyZ - tap: tilde | shift + tap: dead tilde
+    tildes: mod_morph_tildes {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_TILDE)>,         <&kp OS(_CD_TILDE)>;
+    };
+    // Alt+KeyX - tap: left bracket | shift + tap: dead comma
+    lbracketc: mod_morph_leftbracket_deadcomma {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_LBKT)>,        <&kp OS(_CD_COMMA)>;
+    };
+    // Alt+KeyC - tap: right bracket | shift + tap: ogonek
+    rbracketo: mod_morph_rightbracket_ogonek {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_RBKT)>,        <&kp OS(_CD_OGONEK)>;
+    };
+    // Alt+KeyV - tap: underscore | shift + tap: no-break hyphen
+    underscruh: mod_morph_underscore_nobreakhyphen {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_UNDER)>,       <&kp OS(_NB_HYPHEN)>;
+    };
+    // Alt+Comma - tap: semicolon | shift + tap: cedille
+    semicolced: mod_morph_semicol_cedille {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_SEMI)>,        <&kp OS(_CD_CEDILLA)>;
+    };
+    // Alt+Period - tap: colon | shift + tap: colon 
+    // same char each so it can be tapped with spaces before/after
+    coloneach: mod_morph_colon_colon {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_COLON)>,       <&kp OS(_COLON)>;
+    };
+    // Alt+Slash - tap: question mark | shift + tap: breve
+    questionm: mod_morph_questionmark_breve {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_QMARK)>,       <&kp OS(_CD_BREVE)>;
+    };
+    // space mod-morphs
+    nbspac: mod_morph_nb_spac {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_SPACE)>,       <&kp OS(_NB_SPACE)>;
+    };
+    /* 
+     * 
+     * ErgAzAcc / EAC layer
+     * 
+     */
+    // MOD-MORPH - lowercase / uppercase accented characters
+    //                          default action          modded action
+    ACI: mod_morph_a_circumflex {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_A_CIRCU)>,       <OS_C_UP(_A_CIRCU)>; // â / Â
+    };
+    CCE: mod_morph_c_cedilla {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_C_CEDIL)>,       <OS_C_UP(_C_CEDIL)>; // ç / Ç
+    };
+    OE: mod_morph_oe {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_OE)>,          <&kp OS_UP(_OE)>; // œ / Œ
+    };
+    OCI: mod_morph_O_circumflex {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_O_CIRCU)>,       <OS_C_UP(_O_CIRCU)>; // ô / Ô
+    };
+    // tap: trema | shift + tap: grave
+    dia_gr: mod_morph_diaeresis_grave {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_CD_DIAER)>,    <&kp OS(_CD_GRAVE)>;
+    };
+    UCI: mod_morph_u_circumflex {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_U_CIRCU)>,       <OS_C_UP(_U_CIRCU)>; // û / Û
+    };
+    AGR: mod_morph_a_grave {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_A_GRAVE)>,       <OS_C_UP(_A_GRAVE)>;  // à / À
+    };
+    ECU: mod_morph_e_acute {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_E_ACUTE)>,       <OS_C_UP(_E_ACUTE)>;  // é / É
+    };
+    EGR: mod_morph_e_grave {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_E_GRAVE)>,       <OS_C_UP(_E_GRAVE)>;  // è / È
+    };
+    ECI: mod_morph_e_circumflex {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_E_CIRCU)>,       <OS_C_UP(_E_CIRCU)>;   // ê / Ê
+    };
+    ICI: mod_morph_i_circumflex {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_I_CIRCU)>,       <OS_C_UP(_I_CIRCU)>; // î / Î
+    };
+    IDI: mod_morph_i_diaeresis {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_I_DIAER)>,       <OS_C_UP(_I_DIAER)>; // ï / Ï
+    };
+    UGR: mod_morph_u_grave {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <OS_C(_U_GRAVE)>,       <OS_C_UP(_U_GRAVE)>;  // è / È
+    };
+    AE: mod_morph_ae {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_AE)>,          <&kp OS_UP(_AE)>; // æ / Æ
+    };
+    // tap: no-break hyphen | shift + tap: inverted question mark
+    nob_hyph: mod_morph_nob_hyph {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_NB_HYPHEN)>,   <&kp OS(_I_QMARK)>;
+    };
+    mdot_bul: mod_morph_mid_dot_bullet {
+      SETTINGS_MOD_MORPH_SHIFT;
+      bindings =                <&kp OS(_MID_DOT)>,     <&kp OS(_BULLET)>;
+    };
   };
 };

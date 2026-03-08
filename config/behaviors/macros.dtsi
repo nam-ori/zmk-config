@@ -3,62 +3,18 @@
 
 / {
   behaviors {
-    
     /*
      *
-     * ACCENTS MACROS
+     * COMBINING CHARACTERS MACROS
      * 
      */
-    
-    // Accents without letter (dead char -> "alive" char)
-    alive: alive_accent_from_dead_key {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
+    // micro (µ) - AZERTY MODERN LAYOUT
+    micro: macro_micro_azerty {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
       tap-ms = <MACRO_DEFAULT_TAP_MS>;
       wait-ms = <MACRO_DEFAULT_WAIT_MS>;
-      bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &kp SPACE>;
-    };
-    
-    // Circ acc ^
-    acc_ci: put_circ_accent {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <MACRO_DEFAULT_TAP_MS>;
-      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
-      bindings = <&macro_param_1to1>, <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>;
-    };
-    
-    // Trema "
-    acc_tr: put_trema {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <MACRO_DEFAULT_TAP_MS>;
-      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
-      bindings = <&macro_param_1to1>, <&kp CD_TREMA &kp MACRO_PLACEHOLDER>;
-    };
-    
-    /*
-     *
-     * NUM MACROS
-     * 
-     */
-    
-    // Exponent
-    num_exp: num_exponent {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <MACRO_DEFAULT_TAP_MS>;
-      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
-      bindings = <&macro_param_1to1>, <&kp CD_ACC_CI &kp MACRO_PLACEHOLDER>;
-    };
-    
-    // Index
-    num_ind: num_index {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <MACRO_DEFAULT_TAP_MS>;
-      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
-      bindings = <&macro_param_1to1>, <&kp CD_CAR &kp MACRO_PLACEHOLDER>;
+      bindings = <OS_C(_MICRO)>;
     };
   };
 };
