@@ -294,6 +294,7 @@
 #define AZERTY_MODERN_KEY_NEGATION 0
 #define AZERTY_MODERN_KEY_BULLET 0
 #define AZERTY_MODERN_KEY_FRAC_3_4 0
+#define AZERTY_MODERN_KEY_CENT 0
 
 // macro to be used outside of this file
 
