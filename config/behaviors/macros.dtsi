@@ -3,12 +3,15 @@
 
 / {
   behaviors {
-    /*
-     *
-     * COMBINING CHARACTERS MACROS
-     * 
-     */
-    // micro (µ) - AZERTY MODERN LAYOUT
+    // alt-TAB macro - keeping SHIFT pressed until released to look at the overlay or add other TAB(s)
+    alttab: macro_alt_tab {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      tap-ms = <MACRO_DEFAULT_TAP_MS>;
+      wait-ms = <MACRO_DEFAULT_WAIT_MS>;
+      bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>, <&macro_pause_for_release>, <&macro_release &kp LALT>;
+    };
+    // micro (µ) - AZERTY MODERN LAYOUT - 2x &kp, so must be inside a macro!
     micro: macro_micro_azerty {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
