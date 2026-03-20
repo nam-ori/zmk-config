@@ -299,7 +299,7 @@
     // Alt+KeyJ - tap: plus | shift + tap: plus/minus
     plusplusm: mod_morph_plus_plusminus {
       SETTINGS_MOD_MORPH_SHIFT;
-      bindings =                <&kp OS(_RBKT)>,        <&kp OS(_MATH_PM)>;
+      bindings =                <&kp OS(_PLUS)>,        <&kp OS(_MATH_PM)>;
     };
     // Alt+KeyK - tap: minus | shift + tap: macron
     hyphenminm: mod_morph_hyphen_macron {
