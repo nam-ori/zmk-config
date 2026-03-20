@@ -42,6 +42,7 @@
 #define   BACK_EAC  &to ERG
 #define   PBREAK    PAUSE_BREAK
 
+#include "layouts/fr-azerty-alt.dtsi"
 #include "layouts/fr-azerty-modern.dtsi"
 #include "layouts/fr-ergol.dtsi"
 
@@ -79,7 +80,7 @@
       display-name = "ERG";
       bindings = <
 //             ╭───────────┬───────────┬───────────┬────────────┬────────────╮ ╭───────────┬─────────────┬─────────────┬────────────┬────────────╮
-                 &kp OS(_Q)  &kp OS(_C) &kp OS(_O)  &kp OS(_P )   &kp OS(_W)     &kp OS(_J)  &kp OS(_M)    &kp OS(_D)    &eac_exl     &kp OS(_Y)
+                 &kp OS(_Q)  &kp OS(_C) &kp OS(_O)  &kp OS(_P)    &kp OS(_W)     &kp OS(_J)  &kp OS(_M)    &kp OS(_D)    &eac_exl     &kp OS(_Y)
 //             ├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤
         &hrm SL OS(_A) &hrm GL OS(_S) &hrm CL OS(_E) &hrm AL OS(_N) &kp OS(_F) &kp OS(_L) &hrm AL OS(_R) &hrm CR OS(_T) &hrm GR OS(_I) &hrm SR OS(_U)
 // ╭───────────├───────────┼───────────┼───────────┼────────────┼────────────┤ ├───────────┼─────────────┼─────────────┼────────────┼────────────┤────────────╮
